@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>None/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>None/using/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/guided-tour/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/using/top-bar/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/using/how-it-works/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/using/security-practices/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/developing/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/vagrant-spk/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/vagrant-spk/installation/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/vagrant-spk/packaging-tutorial/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/vagrant-spk/packaging-tutorial-meteor/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/developing/publishing-apps/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/developing/handbook/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/developing/auth/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/developing/path/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/vagrant-spk/customizing/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/vagrant-spk/platform-stacks/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/vagrant-spk/code-dependencies/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/vagrant-spk/services/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/developing/web-publishing/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/developing/http-apis/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/developing/email-from-apps/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/vagrant-spk/design/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/developing/troubleshooting/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/developing/raw-packaging-guide/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/developing/raw-python/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/developing/raw-ruby-on-rails/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/developing/raw-pure-client-apps/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/administering/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/install/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/administering/sandcats/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/administering/email/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/administering/demo/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/administering/backups/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/administering/wildcard/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/administering/reverse-proxy/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/administering/ssl/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/administering/faq/</loc>
+     <lastmod>2015-11-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+</urlset>

@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Raw integration of Ruby on Rails - Sandstorm</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Raw integration of Ruby on Rails";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../analytics.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Sandstorm</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Using</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../guided-tour/">Guided tour</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/top-bar/">Top bar</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/how-it-works/">How it works</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/security-practices/">Security practices</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developing apps</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/">Overview of vagrant-spk</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/installation/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/packaging-tutorial/">Packaging tutorial</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/packaging-tutorial-meteor/">Packaging tutorial (Meteor)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../publishing-apps/">App publishing guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../handbook/">App Developer Handbook</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../auth/">User authentication & permissions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../path/">Paths and URLs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/customizing/">Understanding & customizing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/platform-stacks/">Platform stacks</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/code-dependencies/">Code dependencies</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/services/">Service dependencies</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../web-publishing/">Web publishing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../http-apis/">Exporting HTTP APIs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../email-from-apps/">Email from apps</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/design/">vagrant-spk design document</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developing on raw Sandstorm</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../raw-packaging-guide/">Raw packaging guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../raw-python/">Raw integration of Python</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Raw integration of Ruby on Rails</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#raw-integration-guide-for-ruby-on-rails-apps-on-sandstorm">Raw integration guide for Ruby on Rails apps on Sandstorm</a></li>
+                
+                    <li><a class="toctree-l4" href="#introduction">Introduction</a></li>
+                
+                    <li><a class="toctree-l4" href="#ruby-installation">Ruby installation</a></li>
+                
+                    <li><a class="toctree-l4" href="#project-setup">Project Setup</a></li>
+                
+                    <li><a class="toctree-l4" href="#login">Login</a></li>
+                
+                    <li><a class="toctree-l4" href="#boot-time">Boot Time</a></li>
+                
+                    <li><a class="toctree-l4" href="#miscellany">Miscellany</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../raw-pure-client-apps/">Raw integration of pure client apps</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Administering</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../install/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/sandcats/">Sandcats dynamic DNS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/email/">Email</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/demo/">Demo mode</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/backups/">Backups</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/wildcard/">Wildcard hosts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/reverse-proxy/">Reverse Proxy</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/ssl/">HTTPS & SSL</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/faq/">Frequently asked questions</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Sandstorm</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Developing on raw Sandstorm &raquo;</li>
+        
+      
+    
+    <li>Raw integration of Ruby on Rails</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/sandstorm-io/sandstorm/tree/master/docs" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="raw-integration-guide-for-ruby-on-rails-apps-on-sandstorm">Raw integration guide for Ruby on Rails apps on Sandstorm</h1>
+<p><strong>Note</strong>: This highly-technical documentation explains the inner
+workings of Ruby on Rails on Sandstorm. If you want to package a Rails
+app for Sandstorm, consider reading the <a href="../../vagrant-spk/packaging-tutorial/">five minute vagrant-spk
+packaging tutorial</a> instead, and
+using the <a href="../../vagrant-spk/platform-stacks/#diy-platform-stack">DIY stack</a>.</p>
+<h2 id="introduction">Introduction</h2>
+<p>This guide collects some wisdom
+gained from working on Sandstorm ports of
+<a href="https://github.com/dwrensha/gitlab-sandstorm">GitLab</a>
+and <a href="https://github.com/dwrensha/lobsters-sandstorm">Lobsters</a>.
+If you want to see the concrete details
+in action, you should explore those repositories.
+In fact, cloning
+<a href="https://github.com/dwrensha/lobsters-sandstorm">lobsters-sandstorm</a>
+would probably give you a decent good starting point
+for doing your own app port.</p>
+<p>This guide assumes that you are familiar with the basics of raw
+packaging of Sandstorm apps, as outlined in the <a href="../raw-packaging-guide/">raw packaging
+guide</a>.</p>
+<p>Some of the information here might also be useful for
+porting non-Rails Ruby apps.</p>
+<h2 id="ruby-installation">Ruby installation</h2>
+<p>We want to install Ruby in such a way that:</p>
+<ol>
+<li>We have precise control over which version is installed.</li>
+<li>The installation path is the same on our development system as it will be in the packaged app.
+     (Ruby installations tend not to deal well with getting relocated.)</li>
+<li>We don't need to include our home directory in the packaged app.</li>
+</ol>
+<p>We can satisfy these constraints by installing either
+<a href="https://github.com/sstephenson/rbenv">RBenv</a>
+or <a href="https://rvm.io/">RVM</a> in <code>/usr/local</code>.</p>
+<h3 id="rbenv-ruby-build">RBenv / Ruby-Build</h3>
+<p>RBenv can be installed following steps like these:</p>
+<pre><code>$ sudo git clone https://github.com/sstephenson/rbenv.git /usr/local/rbenv
+$ sudo git clone https://github.com/sstephenson/ruby-build.git /usr/local/rbenv/plugins/ruby-build
+$ sudo groupadd rbenv
+$ sudo usermod -a -G rbenv `whoami`
+$ sudo chgrp -R rbenv /usr/local/rbenv
+$ sudo chmod -R g=rwx /usr/local/rbenv
+</code></pre>
+
+<p>To activate it, you'll need to add this to your <code>~/.bashrc</code>:</p>
+<pre><code>export RBENV_ROOT=/usr/local/rbenv
+export PATH=&quot;$RBENV_ROOT/bin:$PATH&quot;
+eval &quot;$(rbenv init -)&quot;
+</code></pre>
+
+<p>Now install the ruby needed by your app. For example,</p>
+<pre><code>$ rbenv install 2.1.5
+</code></pre>
+
+<h3 id="rvm">RVM</h3>
+<p>RVM should work too, but we haven't tested it.</p>
+<p>Note that relative RPATHs currently
+<a href="https://groups.google.com/forum/#!topic/sandstorm-dev/0IDiUgSihiI">don't work on Sandstorm</a>,
+which means that you won't be able to use RVM's binary Ruby distributions.
+You can work around this by making sure
+to build Ruby from source, e.g.</p>
+<pre><code>$ rvm install 2.1.5 --disable-binary
+</code></pre>
+
+<h2 id="project-setup">Project Setup</h2>
+<h3 id="directory-structure">Directory Structure</h3>
+<p>To cleanly separate concerns,
+we recommend that you start a new Git repository
+that brings in the original project as a subdirectory.
+For example, in our Lobsters port,
+we created a <a href="https://github.com/dwrensha/lobsters-sandstorm">new repo</a>
+called "lobsters-sandstorm",
+containing a <a href="https://github.com/dwrensha/lobsters-sandstorm/blob/master/Makefile">Makefile</a>
+with a recipe that <code>git clone</code>s our
+<a href="https://github.com/dwrensha/lobsters">fork of the original Lobsters repo</a>.</p>
+<h3 id="symlinks">Symlinks</h3>
+<p>Rails projects have a standard directory structure,
+with subdirectories including <code>app/</code>, <code>config/</code>, <code>public/</code>,
+and others.
+Of these, <code>tmp/</code> and <code>log/</code> are notable
+in that they need to be writable at run time.
+To allow these to function in a packaged Sandstorm
+app, you'll need to add them as symlinks, e.g.:</p>
+<pre><code>$ ln -s /tmp tmp
+$ ln -s /var/log log
+</code></pre>
+
+<p>Note that the <code>/tmp</code> directory mounted for apps
+has a limited capacity, currently 16MB per
+app instance.</p>
+<h3 id="database-configuration">Database Configuration</h3>
+<p>ActiveRecord conveniently allows us to use SQLite,
+which, for Sandstorm apps, is usually a much better fit
+than MySQL and PostgreSQL.
+To use it, make sure that your <code>Gemfile</code> includes
+the "sqlite3" gem, and make sure
+your <code>config/database.yml</code> looks something like:</p>
+<pre><code>production:
+  adapter: sqlite3
+  pool: 5
+  timeout: 5000
+  database: /var/sqlite3/db.sqlite3
+</code></pre>
+
+<p>It might also make sense to
+include an initialized database
+as part of the packaged app,
+so that your start script
+can just copy it over to writable storage
+when the app first boots.</p>
+<h3 id="gems">gems</h3>
+<p>Make sure you have Bundler installed:</p>
+<pre><code>$ gem install bundler
+</code></pre>
+
+<p>Now you can install your project's dependencies.
+It's best to put them in a local directory, like this:</p>
+<pre><code>$ bundle install --path .bundle --without test development
+</code></pre>
+
+<h3 id="ruby-path">Ruby PATH</h3>
+<p>In your app, it's best to avoid the
+fancy shell setup code that RVM and RBenv
+typically rely on. Instead, you should
+directly use whatever Ruby binary you need.
+For example, if you are using RBenv and Ruby 2.1.5, this would
+entail adding <code>/usr/local/rbenv/versions/2.1.5/bin</code> to your <code>PATH</code>.</p>
+<h3 id="session-secret">Session Secret</h3>
+<p>To freshly generate a new secret on each
+startup of the app, and pass it in through an environment variable,
+make sure that you have a <code>config/secrets.yml</code> like this:</p>
+<pre><code>production:
+  secret_key_base: &lt;%= ENV[&quot;SECRET_KEY_BASE&quot;] %&gt;
+</code></pre>
+
+<p>and that you add a line like this to your startup scripts:</p>
+<pre><code>export SECRET_KEY_BASE=`base64 /dev/urandom | head -c 30`
+</code></pre>
+
+<h3 id="precompile-assets">Precompile Assets</h3>
+<p>Make sure that your <code>config/environments/production.rb</code> is configured like this:</p>
+<pre><code class="ruby">config.serve_static_assets = true # serve the precompiled assets
+config.assets.compile = false     # don't try to compile assets on the fly
+
+config.assets.configure do |env|
+  # override the default location of tmp/cache/assets
+  env.cache = ActiveSupport::Cache::FileStore.new(&quot;read-only-cache/assets&quot;)
+end
+</code></pre>
+
+<p>Now running this command</p>
+<pre><code>$ RAILS_ENV=production ./bin/rake assets:precompile
+</code></pre>
+
+<p>should generate assets in <code>read-only-cache/assets</code> and <code>public/assets</code>.</p>
+<h2 id="login">Login</h2>
+<p>Sandstorm can handle login for your app.
+It proxies all requests and inserts special headers
+indicating the name and ID of authenticated users.
+How you use this information depends on your app's
+authentication scheme and User model.</p>
+<h3 id="devise">Devise</h3>
+<p><a href="https://github.com/plataformatec/devise">Devise</a>
+is a authentication library commonly used by Rails apps.
+It has a mechanism for adding pluggable authentication shemes
+called "strategies". To hook into it, you can add something
+like this to <code>config/initializers/sandstorm_strategy.rb</code>:</p>
+<pre><code class="ruby">module Devise
+  module Strategies
+    class Sandstorm &lt; Authenticatable
+      def authenticate!
+        userid = request.headers['HTTP_X_SANDSTORM_USER_ID'].encode(Encoding::UTF_8)
+        username = URI.unescape(request.headers['HTTP_X_SANDSTORM_USERNAME']).force_encoding(Encoding::UTF_8)
+        u = User.where(username: userid).first
+        if !u
+          opts = {}
+          opts[:name] = username
+          opts[:id] = userid
+          u = User.new(opts)
+          if u.save
+            Rails.logger.info 'User was successfully created.'
+          else
+            Rails.logger.error 'User could not be created'
+            Rails.logger.error u.errors
+          end
+        end
+
+        success!(u)
+      end
+      def valid?
+        !!request.headers['HTTP_X_SANDSTORM_USER_ID']
+      end
+    end
+  end
+end
+</code></pre>
+
+<p>And then edit <code>config/initializers/devise.rb</code> to have the following block somewhere in <code>Devise.setup</code>:</p>
+<pre><code class="ruby">Devise.setup do |config|
+  ...
+  config.warden do |manager|
+    manager.intercept_401 = false
+    manager.strategies.add(:sandstorm, Devise::Strategies::Sandstorm)
+    manager.default_strategies(:scope =&gt; :user).unshift :sandstorm
+  end
+end
+</code></pre>
+
+<h2 id="boot-time">Boot Time</h2>
+<p>Rails apps are not typically optimized for startup time.
+However, fast startup is very important
+for Sandstorm apps, because they are aggressively spun down when not in use.
+Worse, Ruby's strategy for loading gems
+does not interact well with <code>spk dev</code>, so startup times
+in development mode can get quite long -- sometimes on the order of minutes.</p>
+<p>You have a few ways to deal with this.</p>
+<p>The first is to remove dependencies that don't make
+sense for a Sandstorm port.
+For example, any gems that handle authentication can
+be removed, because you're just going to rely on Sandstorm for authentication.
+This includes omniauth, rack-attack and oauth gems.
+Also, you can probably do away with fancier web servers like
+Unicorn and Thin; WEBrick ought to work just fine for a Sandstorm app.</p>
+<p>If your app uses a task runner like Foreman,
+it might be adding a full second to your (non-dev-mode) startup time!
+It's more efficient to launch your processes from startup shell scripts,
+and maybe append something like
+<code>2&gt;&amp;1 | awk '{print "sidekiq: " $0}'</code>
+so you can distinguish the log output.</p>
+<p><code>bundle exec</code> is also somewhat expensive, and all that it does is populate
+environment variables.</p>
+<p>If you're feeling particularly ambitious, you could
+try to eliminate entirely your app's runtime dependency on Bundler,
+as discussed in <a href="http://andre.arko.net/2014/06/27/rails-in-05-seconds/">this blog post</a>.
+If you're feeling even more ambitious, you could develop a general tool
+that statically does what Bundler.setup and Bundler.require do dynamically.</p>
+<p>Finally, you should realize that you don't need to do all your
+development through <code>spk dev</code>. If you <code>spk pack</code> and install your
+app, you can still edit the code in-place in the <code>var/sandstorm/apps/&lt;pkdId&gt;</code>
+directory where it was installed.</p>
+<h2 id="miscellany">Miscellany</h2>
+<h3 id="referer-header">Referer header</h3>
+<p>Sandstorm does not forward the <code>Referer</code> header,
+so things like <code>redirect_to :back</code> will fail.</p>
+<h3 id="accept-header">Accept header</h3>
+<p>The <code>X-Requested-With</code> header is not on Sandstorm's whitelist of headers to
+forward. This can confuse Rails in some cases. You may find it useful
+to add this monkey patch as <code>config/initializers/sandstorm_accept_header.rb</code>:</p>
+<pre><code class="ruby"># For obscure reasons, if Rails gets an XMLHttpRequest with an Accept header like
+# &quot;application/json, text/javascript, */*; q=0.01&quot; and does not get an
+# X-Requested-With header, it will report that HTML is the desired format in calls
+# to `respond_to`. This monkey patch should fix the problem. I think the worst
+# possible side effect is that certain old browsers might display some content wrong.
+module ActionDispatch
+  module Http
+    module MimeNegotiation
+      def valid_accept_header
+        true
+      end
+    end
+  end
+end
+</code></pre>
+
+<h3 id="javascript-runtime">Javascript Runtime</h3>
+<p>The execjs gem wants a javascript runtime to exist on startup.
+If you precompile your assets,
+there's a good chance that you don't actually
+need a javascript runtime in your packaged app.
+In that case, you can get away with adding an empty <code>usr/bin/node</code> file
+to your app, just to appease execjs. (Note that the file has to be marked
+executable.)</p>
+<p>For example, in your source directory, do:</p>
+<pre><code>touch empty-file
+chmod +x empty-file
+</code></pre>
+<p>Then add this to your <code>searchPath</code> in <code>sandstorm-pkgdef.capnp</code>:</p>
+<pre><code>(sourcePath = "empty-file", packagePath = "usr/bin/node"),
+</code></pre>
+<h3 id="migrations">Migrations</h3>
+<p>Logically, we want to do <code>rake db:migrate</code> every time we start up the app,
+but that might be really expensive.
+Instead, your app should write its version somewhere
+and invoke <code>rake db:migrate</code> only when it detects a change.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../raw-pure-client-apps/" class="btn btn-neutral float-right" title="Raw integration of pure client apps"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../raw-python/" class="btn btn-neutral" title="Raw integration of Python"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../raw-python/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../raw-pure-client-apps/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

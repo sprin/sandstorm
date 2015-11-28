@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Exporting HTTP APIs - Sandstorm</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Exporting HTTP APIs";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../analytics.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Sandstorm</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Using</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../guided-tour/">Guided tour</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/top-bar/">Top bar</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/how-it-works/">How it works</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/security-practices/">Security practices</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developing apps</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/">Overview of vagrant-spk</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/installation/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/packaging-tutorial/">Packaging tutorial</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/packaging-tutorial-meteor/">Packaging tutorial (Meteor)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../publishing-apps/">App publishing guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../handbook/">App Developer Handbook</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../auth/">User authentication & permissions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../path/">Paths and URLs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/customizing/">Understanding & customizing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/platform-stacks/">Platform stacks</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/code-dependencies/">Code dependencies</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/services/">Service dependencies</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../web-publishing/">Web publishing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Exporting HTTP APIs</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#overview">Overview</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#how-to-generate-an-api-token">How to generate an API token</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#creating-an-offer-template">Creating an offer template</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#parameters-to-rendertemplate">Parameters to renderTemplate()</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#about-webkeys">About WebKeys</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#bearer-tokens-vs-basic-auth">Bearer tokens vs. Basic auth</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../email-from-apps/">Email from apps</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/design/">vagrant-spk design document</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developing on raw Sandstorm</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../raw-packaging-guide/">Raw packaging guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../raw-python/">Raw integration of Python</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../raw-ruby-on-rails/">Raw integration of Ruby on Rails</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../raw-pure-client-apps/">Raw integration of pure client apps</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Administering</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../install/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/sandcats/">Sandcats dynamic DNS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/email/">Email</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/demo/">Demo mode</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/backups/">Backups</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/wildcard/">Wildcard hosts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/reverse-proxy/">Reverse Proxy</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/ssl/">HTTPS & SSL</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/faq/">Frequently asked questions</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Sandstorm</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Developing apps &raquo;</li>
+        
+      
+    
+    <li>Exporting HTTP APIs</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/sandstorm-io/sandstorm/tree/master/docs" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>A Sandstorm app can export an HTTP-based API to the internet. This
+page explains how to support the following use-cases while relying on
+Sandstorm for access control.</p>
+<ul>
+<li>
+<p>Allowing a mobile client app to connect to a Sandstorm server.</p>
+</li>
+<li>
+<p>Allowing static web pages to interact with Sandstorm servers. (For
+  instance, this could be used to implement comments on a blog
+  published via <a href="../web-publishing/">Sandstorm's web publishing</a> --
+  posting a comment would make an API request.)</p>
+</li>
+<li>
+<p>Federation between servers.</p>
+</li>
+<li>
+<p>Many other things!</p>
+</li>
+</ul>
+<h2 id="overview">Overview</h2>
+<p>When custom code needs to interact with a Sandstorm app, it sends a
+HTTP request to the <strong>API hostname</strong> of the Sandstorm host where app
+is running, along with an <strong>API token</strong> embedded in an <code>Authorization</code>
+HTTP header.</p>
+<p>You can try making a request to a Sandstorm app's API right now via <code>curl</code>:</p>
+<pre><code class="bash">curl -H &quot;Authorization: Bearer 49Np9sqkYV4g_FpOQk1p0j1yJlvoHrZm9SVhQt7H2-9&quot; https://alpha-api.sandstorm.io/
+</code></pre>
+
+<p>Sandstorm is responsible for generating the API token. The API token
+is used for both <strong>access control</strong> and <strong>routing a request</strong> to the
+appropriate grain.</p>
+<p>When a request comes in with a valid API token, Sandstorm sanitizes
+the request, removing the <code>Cookie</code> header and the API token, adding
+typical Sandstorm authentication headers like <code>X-Sandstorm-User-Id</code>,
+and passes the request to the app. Sandstorm combines it with the app
+package's <code>bridgeConfig.apiPath</code> as part of sending the request to the
+grain. Sandstorm sanitizes responses and removes any <code>Set-Cookie</code>
+response header.</p>
+<p>The API endpoint is set up to allow <strong>cross-origin requests from any
+origin</strong>, which means you can access an API from <code>XMLHttpRequest</code> on
+any domain.</p>
+<p>An app can <strong>request the generation of an API token</strong>, and a Sandstorm
+user can manually create a valid API token by clicking on the Webkey icon
+in the Sandstorm shell.</p>
+<h2 id="how-to-generate-an-api-token">How to generate an API token</h2>
+<p>There are various ways to obtain an API token:</p>
+<ul>
+<li>
+<p>The best is via <em>offer templates</em>, where the app specifies textual
+  information for the user of the app, and Sandstorm places the token
+  into this template before displaying it to the user.</p>
+</li>
+<li>
+<p>The user can click the key icon in the top bar when they have an app
+  open.</p>
+</li>
+</ul>
+<p>In the future, we will implement an OAuth flow allowing a third party
+to initiate a request for access to the user's apps.</p>
+<p>Sandstorm's <code>HackSessionContext</code> exports a Cap'n Proto RPC method
+called <code>HackSessionContext.generateApiToken()</code>. That method is
+deprecated in favor of offer templates. If you need to use it, read
+the <a href="../web-publishing/">web publishing guide</a> for more about how to
+access <code>HackSessionContext</code>.</p>
+<h2 id="creating-an-offer-template">Creating an offer template</h2>
+<p>An <em>offer template</em> is a way for Sandstorm to display an API token to
+the user without the app being able to see the token.</p>
+<p>You can see an example by launching <a href="https://oasis.sandstorm.io/appdemo/6va4cjamc21j0znf5h5rrgnv0rpyvh1vaxurkrgknefvj0x63ash">a GitWeb
+demo</a>.</p>
+<p>We implement this as an <code>IFRAME</code> from the Sandstorm server. The grain
+cannot peek into the element. To fill the <code>IFRAME</code> with helpful information
+for the user, including an API token, client-side Javascript in the grain
+provides a template to Sandstorm, and Sandstorm responds with a URL that
+the app can use as the <code>SRC</code> of the <code>IFRAME</code>.</p>
+<p>To create an offer template:</p>
+<ul>
+<li>Create an <code>IFRAME</code> element within your page with a memorable ID. For example:</li>
+</ul>
+<pre><code class="html">&lt;iframe style=&quot;width: 100%; height: 55px; margin: 0; border: 0;&quot; id=&quot;offer-iframe&quot;&gt;
+&lt;/iframe&gt;
+</code></pre>
+
+<ul>
+<li>Add JavaScript to your page to ask Sandstorm to fill the iframe with
+  content. For example:</li>
+</ul>
+<pre><code class="html">&lt;script&gt;
+function fillIframe() {
+  var template = &quot;You can use the $API_TOKEN key to reach me at $API_HOST.&quot;;
+  window.parent.postMessage({renderTemplate: {rpcId: &quot;0&quot;, template: template}}, &quot;*&quot;);
+}
+&lt;/script&gt;
+</code></pre>
+
+<ul>
+<li>Add a window event listener so the Sandstorm shell can provide the
+  URL to you.</li>
+</ul>
+<pre><code class="html">&lt;script&gt;
+var messageListener = function(event) {
+  if (event.data.rpcId === &quot;0&quot;) {
+    if (event.data.error) {
+      console.log(&quot;ERROR: &quot; + event.data.error);
+    } else {
+      var el = document.getElementById(&quot;offer-iframe&quot;);
+      el.setAttribute(&quot;src&quot;, event.data.uri);
+    }
+  }
+};
+
+window.addEventListener(&quot;message&quot;, messageListener);
+&lt;/script&gt;
+</code></pre>
+
+<p>As an implementation detail: the <code>rpcId</code> in the <code>event.data</code> response
+is the same as the value provided to the <code>renderTemplate</code> request. We
+used <code>"0"</code> here; you can choose any value.</p>
+<ul>
+<li>When your page loads, make the request.</li>
+</ul>
+<pre><code class="html">&lt;script&gt;
+document.addEventListener(&quot;DOMContentLoaded&quot;, fillIframe);
+&lt;/script&gt;
+</code></pre>
+
+<ul>
+<li>Your offer template will now contain text such as:</li>
+</ul>
+<pre><code class="html">You can use the 49Np9sqkYV4g_FpOQk1p0j1yJlvoHrZm9SVhQt7H2-9 key to reach me at https://alpha-api.sandstorm.io/.
+</code></pre>
+
+<p><strong>Note</strong>: API tokens created this way must be used within 5 minutes,
+or else they <a href="https://github.com/sandstorm-io/sandstorm/search?utf8=%E2%9C%93&amp;q=selfDestructDuration">automatically
+expire</a>. To
+prevent this from becoming a serious problem, the Sandstorm shell
+automatically refreshes the IFRAME every 5 minutes.</p>
+<h2 id="parameters-to-rendertemplate">Parameters to renderTemplate()</h2>
+<p><code>renderTemplate()</code> accepts the following parameters:</p>
+<ul>
+<li>
+<p><code>rpcId</code>: <strong>String</strong> of a message ID that will be passed back to your
+  code.</p>
+</li>
+<li>
+<p><code>template</code>: <strong>String</strong> to display to the user, where <code>$API_HOST</code>
+  and <code>$API_TOKEN</code> will be replaced.</p>
+</li>
+<li>
+<p><code>petname</code>: <strong>String (optional)</strong> of a name that this API token will
+  have, when the user lists the API tokens and sharing links they have
+  generated.</p>
+</li>
+<li>
+<p><code>roleAssignment</code>: <strong>roleAssignmentPattern (optional)</strong> of
+  permissions to apply to inbound requests. Use this to create API
+  tokens with limited permissions, such as a read-only view.</p>
+</li>
+<li>
+<p><code>forSharing</code>: <strong>Boolean (optional)</strong> true if this token should
+  represent the anonymous user. You can use this to detach the token
+  from the user who created it. <strong>Note</strong> that this also allows users
+  to redeem it as a sharing link of the form
+  <code>https://sandstorm.example.com/shared/$API_TOKEN</code>.</p>
+</li>
+</ul>
+<h2 id="about-webkeys">About WebKeys</h2>
+<p>When a user clicks on the key icon within app, it creates a
+<a href="http://waterken.sourceforge.net/web-key/">webkey</a>, which is a
+combination of an endpoint URL and an API token separated by a <code>#</code>. An
+example is:</p>
+<pre><code>https://alpha-api.sandstorm.io#49Np9sqkYV4g_FpOQk1p0j1yJlvoHrZm9SVhQt7H2-9
+</code></pre>
+<p>This format is intentionally chosen to look like a valid URL that
+could be opened in a browser. Eventually, when such a URL is loaded
+directly in a browser, Sandstorm will show the user information about
+the API and possibly offer the ability to explore the API and initiate
+requests for debugging purposes. As of this writing, these features
+are not yet implemented.</p>
+<p>The part of the webkey before the <code>#</code> is the API endpoint for the
+server (in this case, for alpha.sandstorm.io). After the <code>#</code> is the
+API token. So, to make a request to the webkey specified above, you
+might use the following <code>curl</code> command:</p>
+<pre><code>curl -H "Authorization: Bearer 49Np9sqkYV4g_FpOQk1p0j1yJlvoHrZm9SVhQt7H2-9" https://alpha-api.sandstorm.io
+</code></pre>
+<h2 id="bearer-tokens-vs-basic-auth">Bearer tokens vs. Basic auth</h2>
+<p>Typically, HTTP APIs on Sandstorm should be accessed using an OAuth
+2.0-style Bearer token in an Authorization header:</p>
+<pre><code class="bash">    Authorization: Bearer &lt;token&gt;
+</code></pre>
+
+<p>Because an <code>Authorization</code> header is required, it is impossible for a
+web browser to open a Sandstorm HTTP API directly in a browser
+window. This is intentional: this prevents Sandstorm apps from
+executing arbitrary scripts from the API host.</p>
+<p>Some apps are unable to use Bearer tokens; they can use HTTP Basic
+auth. The Sandstorm code maintains a <a href="https://github.com/sandstorm-io/sandstorm/search?utf8=%E2%9C%93&amp;q=BASIC_AUTH_USER_AGENTS">whitelist of <code>User-Agent</code>
+strings</a>
+that are allowed to use Basic auth. If your Sandstorm app has a client
+that cannot use an Authoriztion header, consider <a href="https://github.com/sandstorm-io/sandstorm/issues">filing a
+bug</a> requesting the
+white-listing of its user-agent value.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../email-from-apps/" class="btn btn-neutral float-right" title="Email from apps"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../web-publishing/" class="btn btn-neutral" title="Web publishing"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../web-publishing/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../email-from-apps/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

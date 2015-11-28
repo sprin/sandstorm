@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Security practices - Sandstorm</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Security practices";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../analytics.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Sandstorm</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Using</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../guided-tour/">Guided tour</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../top-bar/">Top bar</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../how-it-works/">How it works</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Security practices</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#threat-models">Threat models</a></li>
+                
+                    <li><a class="toctree-l4" href="#mitigation-of-app-bugs">Mitigation of app bugs</a></li>
+                
+                    <li><a class="toctree-l4" href="#defense-against-malicious-apps">Defense against malicious apps</a></li>
+                
+                    <li><a class="toctree-l4" href="#defense-against-surveillance-and-profiling">Defense against surveillance and profiling</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#strategies">Strategies</a></li>
+                
+                    <li><a class="toctree-l4" href="#platform-level-authentication">Platform-level authentication</a></li>
+                
+                    <li><a class="toctree-l4" href="#fine-grained-isolation">Fine-grained isolation</a></li>
+                
+                    <li><a class="toctree-l4" href="#true-confinement">True Confinement</a></li>
+                
+                    <li><a class="toctree-l4" href="#capability-based-usable-security">Capability-based Usable Security</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#tactics">Tactics</a></li>
+                
+                    <li><a class="toctree-l4" href="#server-sandboxing">Server Sandboxing</a></li>
+                
+                    <li><a class="toctree-l4" href="#client-sandboxing">Client Sandboxing</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#case-studies">Case Studies</a></li>
+                
+                    <li><a class="toctree-l4" href="#etherpad">Etherpad</a></li>
+                
+                    <li><a class="toctree-l4" href="#wordpress">Wordpress</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developing apps</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/">Overview of vagrant-spk</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/installation/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/packaging-tutorial/">Packaging tutorial</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/packaging-tutorial-meteor/">Packaging tutorial (Meteor)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/publishing-apps/">App publishing guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/handbook/">App Developer Handbook</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/auth/">User authentication & permissions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/path/">Paths and URLs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/customizing/">Understanding & customizing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/platform-stacks/">Platform stacks</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/code-dependencies/">Code dependencies</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/services/">Service dependencies</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/web-publishing/">Web publishing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/http-apis/">Exporting HTTP APIs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/email-from-apps/">Email from apps</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/design/">vagrant-spk design document</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developing on raw Sandstorm</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/raw-packaging-guide/">Raw packaging guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/raw-python/">Raw integration of Python</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/raw-ruby-on-rails/">Raw integration of Ruby on Rails</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/raw-pure-client-apps/">Raw integration of pure client apps</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Administering</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../install/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/sandcats/">Sandcats dynamic DNS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/email/">Email</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/demo/">Demo mode</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/backups/">Backups</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/wildcard/">Wildcard hosts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/reverse-proxy/">Reverse Proxy</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/ssl/">HTTPS & SSL</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/faq/">Frequently asked questions</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Sandstorm</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Using &raquo;</li>
+        
+      
+    
+    <li>Security practices</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/sandstorm-io/sandstorm/tree/master/docs" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><strong>Sandstorm is a security product.</strong></p>
+<p>We like to say that Sandstorm's priorities are Usability, Security,
+and Freedom. In public, we tend to talk more about usability and
+freedom, because those are the priorities users are most excited
+about. However, within the team, we are just as passionate -- if not
+more so -- about security.</p>
+<p>Ultimately, our goal is that, to the maximum extent possible, users
+need not worry about security, because using the system intuitively
+will result in the desired security properties "by default". Moreover,
+we aim to allow network administrators to be able to say: "As long as
+it's on Sandstorm, you can run whatever apps you want, because we
+trust Sandstorm to keep things secure."</p>
+<h2 id="threat-models">Threat models</h2>
+<p>Sandstorm defends against a wide variety of threats; too many to list
+here. However, as a platform for apps, most of our energy goes into
+the following:</p>
+<h3 id="mitigation-of-app-bugs">Mitigation of app bugs</h3>
+<p>Sandstorm's most important security goal is to ensure that security
+bugs in applications are contained and mitigated to the maximum extent
+possible. For example:</p>
+<ul>
+<li>A buggy app should not allow an attacker to compromise the rest of the system or network.</li>
+<li>A buggy app should not be able to grant attackers access even to itself.</li>
+<li>A buggy app should not be able to expose private data to the internet.</li>
+</ul>
+<p>Obviously, Sandstorm cannot defend against every possible app bug,
+especially when apps need access to sensitive resources in order to
+function. However, security is about risk management, and there is
+much that Sandstorm can and does do to greatly reduce the user's or
+the network admin's overall risk.</p>
+<h3 id="defense-against-malicious-apps">Defense against malicious apps</h3>
+<p>Sandstorm does not just aim to defend against buggy apps, but also
+actively malicious apps. It is our goal that a user should be able to
+install and run arbitrary applications from arbitrary authors without
+serious consequence. This is important because Sandstorm is aimed at
+allowing non-technical users to administer their own
+server. Inevitably, such users will install malware.</p>
+<p>Again, obviously, Sandstorm cannot prevent an app from misusing
+permissions that a user has explicitly granted to it. But, making an
+app explicitly request such permissions makes it much easier for users
+to understand what is happening and defend themselves.</p>
+<h3 id="defense-against-surveillance-and-profiling">Defense against surveillance and profiling</h3>
+<p>In the world of Software-as-a-Service, it is common practice for web
+apps to collect information about individual users, commonly for the
+purpose of building advertising profiles. We at Sandstorm feel that
+any such collection is only ethical with the user's full knowledge and
+consent. Unfortunately, in practice, profiling usually happens behind
+the user's back.</p>
+<p>Sandstorm aims to prevent apps from engaging in covert surveillance
+while allowing statistics gathering when the user consents to it.</p>
+<h2 id="strategies">Strategies</h2>
+<p>Sandstorm's primary overarching security strategies are as follows.</p>
+<h3 id="platform-level-authentication">Platform-level authentication</h3>
+<p>Sandstorm implements authentication at the platform level, so that you
+log into the platform once rather than to each application
+separately. When you open an app, the platform informs the app of your
+already-authenticated identity. This means that applications
+themselves never handle sensitive authentication credentials like
+passwords, which greatly reduces the damage possible if an
+application's database is compromised.</p>
+<p>More generally, Sandstorm aims to ensure that applications never store
+sensitive secrets at all. For example, we plan to implement an
+outgoing OAuth proxy such that applications do not directly engage in
+OAuth requests but rather request the platform do so on their
+behalf. Thus, the platform is able to store OAuth tokens securely.</p>
+<h3 id="fine-grained-isolation">Fine-grained isolation</h3>
+<p>Sandstorm implements <em>fine-grained</em> containers. This means that
+Sandstorm does not just isolate apps from each other, but isolates
+individual resources within an app. For example, with Etherpad (a
+document editor), Sandstorm creates a new Etherpad instance in its own
+isolated container for every Etherpad document you create.</p>
+<p>Fine-grained isolation allows Sandstorm to implement access control at
+the container level. When you share an Etherpad document, you are
+telling <em>Sandstorm</em> who should have access, not Etherpad. Thus, no bug
+in Etherpad can allow someone to get access to a document to which
+they should not have.</p>
+<p>It's important to note that Sandstorm can only truly enforce a binary
+has access / does not have access. Permission levels like read
+vs. write are app-dependent and thus can only be implemented by the
+app. To that end, when a user connects, Sandstorm computes (via the
+<a href="https://blog.sandstorm.io/news/2015-05-05-delegation-is-the-cornerstone-of-civilization.html">sharing
+model</a>)
+which permissions the user has, and then asks the app to enforce those
+permissions on the user's session. That is, when the app receives
+requests, those requests are annotated with information like "this
+user has read permission but not write". The app can then enforce said
+permissions without ever needing to track any information about
+specific users.</p>
+<h3 id="true-confinement">True Confinement</h3>
+<p>A Sandstorm app, by default, is totally isolated from the network. It
+cannot connect to anyone; it can only receive proxied HTTP requests
+from the user. Thus, by default, an app cannot "phone home" to its
+developers' servers, and cannot build an advertising profile on you,
+unless you give it permission to do so.</p>
+<p>It's worth noting that it may be possible for a malicious app to leak
+small amounts of information through "covert channels". For example,
+if the developer is able to run another app on the same server where
+the user's instance of the app is running (perhaps because both are
+running in a shared hosting environment), then the two app instances
+may be able to communicate by varying their CPU usage and observing
+the timing changes caused by those variations. Sandstorm ultimately
+cannot prevent these kinds of attacks. However, since covert channels
+are very obviously malicious, any developer caught using one would
+risk serious PR and possibly legal consequences, which should
+hopefully deter any large company from doing such a thing. Moreover,
+covert channels are usually very limited in bandwidth. Sandstorm
+ensures that it is not possible to bootstrap a normal communications
+channel by leaking plain bits -- in technical terms, <em>capabilities</em> in
+Sandstorm are never just bits, and therefore you cannot leak
+<em>capabilities</em> via covert channels.</p>
+<p><em><strong>Alpha Notice:</strong> As of this writing (May 2015), Sandstorm is in
+alpha. Key features allowing a user to easily grant an application
+access to external resources are still in development. In order to
+make Sandstorm more useful to alpha testers and early adopters, we
+have temporarily opened some intentional holes in our confinement
+model. For example, we have allowed outgoing HTTP to arbitrary servers
+in order to permit the TinyTiny RSS app to fetch RSS feeds, and we
+have allowed incoming and outgoing SMTP (with certain restrictions) to
+allow email clients to work. These holes will be closed as soon as the
+Powerbox UI and drivers make them obsolete, but in the meantime
+Sandstorm does not yet implement true confinement.</em></p>
+<h3 id="capability-based-usable-security">Capability-based Usable Security</h3>
+<p>Sandstorm employs capability-based security in order to make security
+<em>usable</em>.</p>
+<p>Security without usability is, after all, trivial: just disconnect
+your server from the network. Now it's secure, but useless. The real
+challenge in security is making sure it does not get in way of getting
+work done.</p>
+<p>Since Sandstorm isolates and confines apps by default, we need a way
+to allow the user to connect apps to each other easily and
+securely. Capability-based security helps enable this by representing
+permissions as "capabilities", objects which the user may pass around
+between apps. A capability both identifies a resource (like an address)
+and grants its bearer permission to <em>use</em> that resource.</p>
+<p>The advantage of capability-based security is that it effectively
+infers <em>security</em> from a separate action that the user had to do
+anyway. Consider a traditional system based on access control lists
+(ACLs). Normally, there are two steps required for a user to connect
+app A to app B.</p>
+<ol>
+<li>The user tells app A how to find app B, for example by specifying app B's hostname.</li>
+<li>The user edits app B's access control list to indicate that app A has access.</li>
+</ol>
+<p>Capability-based security combines these two into one step:</p>
+<ol>
+<li>The user gives app A a capability to app B.</li>
+</ol>
+<p>Notice that this one step is something the user would need to do <em>even
+if there were no security</em>. App A always needs to be told which app B
+to talk to.</p>
+<p><strong>The Powerbox</strong></p>
+<p>Sandstorm uses capability-based security at every level of the
+platform. All intra-system communications are performed using <a href="https://capnproto.org">Cap'n
+Proto</a>, a capability-based transport network
+protocol. Sandstorm capabilities are literally Cap'n Proto
+capabilities in implementation.</p>
+<p>At the user interface level, the user interacts with capabilities
+through "the powerbox". The basic functioning of the powerbox is as
+follows:</p>
+<ol>
+<li>As the user installs apps, each app tells the platform about what kinds of APIs (Cap'n Proto interfaces) it implements.</li>
+<li>At some point, an app that the user is using makes a request to the platform saying "I need a capability implementing interface <code>Foo</code>".</li>
+<li>The <em>platform</em> renders a picker UI to the user, where the user can choose from among all their apps that implement API <code>Foo</code>.</li>
+<li>The user chooses the app they want to satisfy the request.</li>
+<li>The platform grants the requesting app a capability to the chosen API.</li>
+</ol>
+<p>Thus, we've implemented a "service discovery" mechanism that is
+user-friendly and automatically handles security.</p>
+<p>The Powerbox is an excellent example of the intersection between
+Sandstorm's promises of Usability, Security, and Freedom:</p>
+<ul>
+<li>
+<p><strong>Usability:</strong> The user does not need to understand concepts like IP
+addresses, hostnames, access credentials, etc. in order to connect two
+apps. The choice is presented in a way that non-technical users can
+grasp.</p>
+</li>
+<li>
+<p><strong>Security:</strong> The platform can automatically infer the proper
+security settings from the user's choice: obviously, the user wants
+the requesting app to have permission to access the target they chose,
+and no others.</p>
+</li>
+<li>
+<p><strong>Freedom:</strong> An app can never request permission to a <em>specific</em>
+other app, but can only ask for something implementing the desired
+<em>API</em>. The user can always substitute any compatible app. This helps
+to prevent vendor lock-in, where all apps from a vendor integrate only
+with each other and fail to give the user any ability to swap out one
+app for a third party app.</p>
+</li>
+</ul>
+<p><em>Note: As of this writing (May 2015), the powerbox is still in the
+process of being implemented. This is why we have not yet implemented
+full confinement, as mentioned above: without the powerbox, it would
+be too limiting.</em></p>
+<h2 id="tactics">Tactics</h2>
+<p>At a lower level, here are some of the techniques Sandstorm uses to provide security.</p>
+<h3 id="server-sandboxing">Server Sandboxing</h3>
+<p>Every grain (fine-grained application instance) runs, on the server side, inside a secure sandbox. The sandbox is based on the same Linux kernel namespacing features commonly used to implement containers. However, unlike most container implementations, Sandstorm implements various measures to reduce the kernel's "attack surface". That is, Sandstorm disables many kernel APIs that apps don't need, in order to mitigate any security vulnerabilities found in those APIs. For example:</p>
+<ul>
+<li>
+<p>We use seccomp-bpf to disable many exotic system calls, especially
+  ones which have seen a lot of vulnerabilities in the past. For
+  example, we do not allow apps to create new UID namespaces -- the
+  source of a large number of recent kernel vulnerabilities.</p>
+</li>
+<li>
+<p>We do not mount <code>/proc</code> or <code>/sys</code> filesystems.</p>
+</li>
+<li>
+<p>The only devices exposed are <code>/dev/zero</code>, <code>/dev/null</code>, and
+  <code>/dev/urandom</code> (with <code>/dev/random</code> symlinked to <code>urandom</code>, <a href="http://lists.randombit.net/pipermail/cryptography/2013-August/004983.html">as it
+  should
+  be</a>).</p>
+</li>
+</ul>
+<p>Over time, Sandstorm plans to disable more and more system calls by
+moving implementations to userspace, but even with the filter we
+already have, Sandstorm has avoided dozens of kernel vulnerabilities
+over the last few months.</p>
+<p>Sandstorm's server container maps the app's package (libraries,
+assets, etc.) read-only, and maps the per-grain writable storage at
+<code>/var</code>. Thus, apps are stateful, yet assets can be shared between many
+instances of the app.</p>
+<p>An app's only communication to the outside world is done through a
+single Cap'n Proto socket, inherited by the app's root process. For
+example, HTTP requests are delivered to the app as Cap'n Proto
+RPCs. The app may employ shims (such as <code>sandstorm-http-bridge</code>) to
+bridge between Cap'n Proto and traditional protocols, e.g. to be able
+to use a traditional HTTP server without modification. By using a
+capability-based schema-driven protocol, it is easy to review exactly
+what an app can do for security purposes. See for example Sandstorm's
+<a href="https://github.com/sandstorm-io/sandstorm/blob/master/src/sandstorm/web-session.capnp">web-session.capnp</a>
+which defines HTTP over Cap'n Proto: notice that this is far more
+readable than the HTTP specification.</p>
+<h3 id="client-sandboxing">Client Sandboxing</h3>
+<p>On the client side, Sandstorm isolates apps by requiring every app to
+run on a separate, randomly-generated hostname. Because of this,
+Sandstorm requires a <a href="../../administering/wildcard/">wildcard
+host</a>.</p>
+<p>Sandstorm not only hosts each grain at a separate origin, but actually
+creates a new origin for every <em>session</em>. That is, every time a user
+opens a document, it is hosted at a new one-off
+cryptographically-random hostname which expires shortly after the
+document is closed.</p>
+<p>Randomized, unguessable hostnames can help mitigate certain common
+security bugs in apps, such as <strong>XSRF</strong>, <strong>reflected XSS</strong>, and
+<strong>clickjacking</strong> attacks. All of these attacks involve an attacker
+tricking the user's browser into performing actions on another site
+using the user's credentials. But for any of these attacks to work,
+the attacker must know the address to attack. If every user gets a
+different hostname, and indeed the hostnames change frequently, then
+it is much harder to launch these kinds of attacks.</p>
+<p>Note that because DNS requests are made in cleartext, random hostnames
+will not defend against an attacker who has the ability to snoop
+network traffic coming from the user's machine. Therefore, apps should
+still implement their own defenses against these attacks as they
+always have. But, when a bug slips through (as they commonly do),
+randomized hostnames make an attack much, much more difficult to pull
+off, which is still a big win.</p>
+<p>Sandstorm will soon employ the <code>Content-Security-Policy</code> header to
+prevent an app from communicating with other origins without
+permission, in order to implement full confinement. As of this writing
+(May 2015), this has not yet been put in place, mostly because
+server-side confinement is not complete (as described earlier) which
+makes client-side confinement largely moot for the moment.</p>
+<h2 id="case-studies">Case Studies</h2>
+<p>We've already seen Sandstorm's security model mitigate bugs in apps. Here are some examples.</p>
+<h3 id="etherpad">Etherpad</h3>
+<p>Etherpad has, over the last several months, disclosed several vulnerabilities falling into a few categories:</p>
+<ul>
+<li>
+<p>Path injection attacks allowing anyone to download arbitrary files
+  from the server's filesystem (such as Etherpad's own database,
+  containing credentials).</p>
+</li>
+<li>
+<p>Information leaks allowing someone with access to one document on
+  the server to discover and read other documents.</p>
+</li>
+<li>
+<p>Various other minor information leaks of user and system
+  information.</p>
+</li>
+</ul>
+<p>None of these problems have affected Etherpad on Sandstorm, because
+Sandstorm runs every Etherpad document in a separate container, and
+because Sandstorm implements authentication, sharing, and access
+control.</p>
+<h3 id="wordpress">Wordpress</h3>
+<p>The Sandstorm port of Wordpress separates the Wordpress admin
+interface from the publicly-facing published web site. The admin
+interface is accessed through Sandstorm, whereas the published site is
+served as read-only content. The Wordpress may not even be running
+when public content is served; Sandstorm simply returns the content
+from disk.</p>
+<p>As a result, many recent Wordpress security vulnerabilities are
+mitigated by Sandstorm: since regular visitors to the site have no
+ability to interact with Wordpress software, they have no ability to
+exploit it. Several recent Wordpress security vulnerabilities are
+therefore irrelevant to Sandstorm users.</p>
+<p>(Admittedly, this protection currently comes at the cost of disabling
+features like public comments. We plan to address this in the
+future. For many use cases, though, this restriction is perfectly
+acceptable.)</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../developing/" class="btn btn-neutral float-right" title="Overview"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../how-it-works/" class="btn btn-neutral" title="How it works"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../how-it-works/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../developing/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

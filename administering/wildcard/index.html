@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Wildcard hosts - Sandstorm</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Wildcard hosts";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../analytics.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Sandstorm</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Using</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../guided-tour/">Guided tour</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/top-bar/">Top bar</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/how-it-works/">How it works</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/security-practices/">Security practices</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developing apps</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/">Overview of vagrant-spk</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/installation/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/packaging-tutorial/">Packaging tutorial</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/packaging-tutorial-meteor/">Packaging tutorial (Meteor)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/publishing-apps/">App publishing guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/handbook/">App Developer Handbook</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/auth/">User authentication & permissions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/path/">Paths and URLs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/customizing/">Understanding & customizing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/platform-stacks/">Platform stacks</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/code-dependencies/">Code dependencies</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/services/">Service dependencies</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/web-publishing/">Web publishing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/http-apis/">Exporting HTTP APIs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/email-from-apps/">Email from apps</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/design/">vagrant-spk design document</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developing on raw Sandstorm</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/raw-packaging-guide/">Raw packaging guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/raw-python/">Raw integration of Python</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/raw-ruby-on-rails/">Raw integration of Ruby on Rails</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/raw-pure-client-apps/">Raw integration of pure client apps</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Administering</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../install/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../sandcats/">Sandcats dynamic DNS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../email/">Email</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../demo/">Demo mode</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../backups/">Backups</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Wildcard hosts</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#its-all-about-security">It's all about security.</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#sandstorm-handles-this-for-localhost-sandcats-users">Sandstorm handles this for localhost + sandcats users</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#frequently-asked-questions-about-wildcards">Frequently-asked questions about wildcards</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-does-sandstorm-use-its-wildcard">How does Sandstorm use its wildcard?</a></li>
+                
+                    <li><a class="toctree-l4" href="#why-cant-sandstorm-map-every-app-under-one-domain-like-examplecomapp-name">Why can't Sandstorm map every app under one domain, like example.com/app-name?</a></li>
+                
+                    <li><a class="toctree-l4" href="#why-cant-sandstorm-use-one-hostname-per-app-like-app-nameexamplecom-then-admins-could-configure-specifically-those-hosts">Why can't Sandstorm use one hostname per app, like app-name.example.com? Then admins could configure specifically those hosts.</a></li>
+                
+                    <li><a class="toctree-l4" href="#why-a-new-hostname-for-every-session-rather-than-for-every-document">Why a new hostname for every session, rather than for every document?</a></li>
+                
+                    <li><a class="toctree-l4" href="#can-sandstorm-contact-the-dns-and-ssl-servers-to-request-creation-of-each-new-host-on-demand-rather-than-require-a-wildcard">Can Sandstorm contact the DNS and SSL servers to request creation of each new host on-demand, rather than require a wildcard?</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../reverse-proxy/">Reverse Proxy</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../ssl/">HTTPS & SSL</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../faq/">Frequently asked questions</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Sandstorm</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Administering &raquo;</li>
+        
+      
+    
+    <li>Wildcard hosts</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/sandstorm-io/sandstorm/tree/master/docs" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>To run Sandstorm, you must assign it a wildcard host, in which it can
+generate new hostnames as-needed. For instance, you might set up
+Sandstorm to run at <code>example.com</code> and assign it the wildcard
+<code>*.example.com</code>.</p>
+<p>Setting up wildcard DNS and especially SSL can be difficult and
+costly, which commonly leads to the question: "Why does Sandstorm need
+this?" This page seeks to answer the questions.</p>
+<h2 id="its-all-about-security">It's all about security.</h2>
+<p>Sandstorm is designed to implement strong sandboxing of apps, such
+that users need not worry about the risk that a malicious -- or simply
+buggy -- app might interfere with other apps or the rest of the
+network. Our goal is for the network admins to be able to say: "As
+long as it's on Sandstorm, you can run whatever apps you want, because
+we trust Sandstorm to keep things secure."</p>
+<p>Using a wildcard host is just one part of <a href="../../using/security-practices/">Sandstorm's security
+model</a>.</p>
+<h2 id="sandstorm-handles-this-for-localhost-sandcats-users">Sandstorm handles this for localhost + sandcats users</h2>
+<p>Sandstorm runs <code>local.sandstorm.io</code> as a wildcard domain where
+both <code>local.sandstorm.io</code> and all of its subdomains
+(<code>*.local.sandstorm.io</code>) point to <code>127.0.0.1</code>, the same as
+<code>localhost</code>. This allows you to conveniently run Sandstorm on
+your own computer or a virtual machine for development and
+testing by configuring it to use <code>local.sandstorm.io</code> and
+<code>*.local.sandstorm.io</code>, without needing to own a domain and
+configure wildcard DNS for a subdomain.</p>
+<p>For the <code>sandcats.io</code> DNS service, each domain is also a wildcard
+domain. This allows a self-hosted Sandstorm domain to operate
+correctly.</p>
+<h2 id="frequently-asked-questions-about-wildcards">Frequently-asked questions about wildcards</h2>
+<p>Here are some common questions about Sandstorm's use of wildcards.</p>
+<h3 id="how-does-sandstorm-use-its-wildcard">How does Sandstorm use its wildcard?</h3>
+<p>Every time you open a grain (an instance of a Sandstorm app), you
+begin a new "session" with that grain. Every session is assigned a
+unique, cryptographically-random hostname. The session ends shortly
+after you close the tab; after that, the hostname is disabled and is
+never used again.</p>
+<p>Each session -- and thus each hostname -- belongs to a single
+user. Using a cookie, Sandstorm ensures that no other user can access
+the session's hostname. This cookie is enforced by Sandstorm, not the
+app; Sandstorm accomplishes this by acting as a proxy in front of the
+app that checks the cookie.</p>
+<h3 id="why-cant-sandstorm-map-every-app-under-one-domain-like-examplecomapp-name">Why can't Sandstorm map every app under one domain, like <code>example.com/app-name</code>?</h3>
+<p>Due to "same-origin policy" as specified in web standards, it is
+impossible to isolate apps hosted within the same "origin",
+i.e. hostname. If two tabs or frames are in the same origin, then
+Javascript in each is permitted to arbitrarily modify the contents of
+the other, including executing arbitrary code. This makes it totally
+impossible for these apps to defend themselves from each other even if
+they tried. Hence, it is absolutely necessary for every app to be on a
+separate host.</p>
+<h3 id="why-cant-sandstorm-use-one-hostname-per-app-like-app-nameexamplecom-then-admins-could-configure-specifically-those-hosts">Why can't Sandstorm use one hostname per app, like <code>app-name.example.com</code>? Then admins could configure specifically those hosts.</h3>
+<p>Multiple reasons:</p>
+<ul>
+<li>
+<p>Sandstorm aims to make app installation a one-click process. If
+  every time a new app is installed, the user must edit DNS records
+  and issue a new SSL certificate, one of the platform's most valuable
+  features is lost.</p>
+</li>
+<li>
+<p>Sandstorm does not just isolate apps from each other, but isolates
+  individual resources within an app. For example, with Etherpad (a
+  document editor), Sandstorm creates a new Etherpad instance in its
+  own isolated container for every Etherpad document you create. This
+  protects against potential security problems in Etherpad which may
+  have allowed a user with access to one document to improperly obtain
+  access to other documents -- Etherpad has in fact had several such
+  bugs in the last few months, but none of them affected Etherpad on
+  Sandstorm.</p>
+</li>
+</ul>
+<h3 id="why-a-new-hostname-for-every-session-rather-than-for-every-document">Why a new hostname for every session, rather than for every document?</h3>
+<p>Randomized, unguessable hostnames can help mitigate certain common
+security bugs in apps, such as <strong>XSRF</strong>, <strong>reflected XSS</strong>, and
+<strong>clickjacking</strong> attacks. All of these attacks involve an attacker
+tricking the user's browser into performing actions on another site
+using the user's credentials. But for any of these attacks to work,
+the attacker must know the address to attack. If every user gets a
+different hostname, and indeed the hostnames change frequently, then
+it is much harder to launch these kinds of attacks.</p>
+<p>Note that because DNS requests are made in cleartext, random hostnames
+will not defend against an attacker who has the ability to snoop
+network traffic coming from the user's machine. Therefore, apps should
+still implement their own defenses against these attacks as they
+always have. But, when a bug slips through (as they commonly do),
+randomized hostnames make an attack much, much more difficult to pull
+off, which is still a big win.</p>
+<h3 id="can-sandstorm-contact-the-dns-and-ssl-servers-to-request-creation-of-each-new-host-on-demand-rather-than-require-a-wildcard">Can Sandstorm contact the DNS and SSL servers to request creation of each new host on-demand, rather than require a wildcard?</h3>
+<p>While theoretically possible, Sandstorm would need to do generate a
+new hostname every time the user opens a document. This would lead to
+undesirably high load on DNS and SSL systems.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../reverse-proxy/" class="btn btn-neutral float-right" title="Reverse Proxy"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../backups/" class="btn btn-neutral" title="Backups"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../backups/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../reverse-proxy/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

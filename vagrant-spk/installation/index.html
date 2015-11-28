@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation - Sandstorm</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Installation";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../analytics.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Sandstorm</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Using</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../guided-tour/">Guided tour</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/top-bar/">Top bar</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/how-it-works/">How it works</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/security-practices/">Security practices</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developing apps</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Overview of vagrant-spk</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Installation</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#installation">Installation</a></li>
+                
+                    <li><a class="toctree-l4" href="#ensure-git-is-installed">Ensure git is installed</a></li>
+                
+                    <li><a class="toctree-l4" href="#ensure-vagrant-is-installed">Ensure Vagrant is installed</a></li>
+                
+                    <li><a class="toctree-l4" href="#ensure-virtualbox-is-installed">Ensure VirtualBox is installed</a></li>
+                
+                    <li><a class="toctree-l4" href="#no-need-to-install-sandstorm-directly">No need to install Sandstorm directly</a></li>
+                
+                    <li><a class="toctree-l4" href="#install-vagrant-spk">Install vagrant-spk</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../packaging-tutorial/">Packaging tutorial</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../packaging-tutorial-meteor/">Packaging tutorial (Meteor)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/publishing-apps/">App publishing guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/handbook/">App Developer Handbook</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/auth/">User authentication & permissions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/path/">Paths and URLs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../customizing/">Understanding & customizing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../platform-stacks/">Platform stacks</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../code-dependencies/">Code dependencies</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../services/">Service dependencies</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/web-publishing/">Web publishing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/http-apis/">Exporting HTTP APIs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/email-from-apps/">Email from apps</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../design/">vagrant-spk design document</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developing on raw Sandstorm</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/raw-packaging-guide/">Raw packaging guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/raw-python/">Raw integration of Python</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/raw-ruby-on-rails/">Raw integration of Ruby on Rails</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/raw-pure-client-apps/">Raw integration of pure client apps</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Administering</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../install/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/sandcats/">Sandcats dynamic DNS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/email/">Email</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/demo/">Demo mode</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/backups/">Backups</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/wildcard/">Wildcard hosts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/reverse-proxy/">Reverse Proxy</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/ssl/">HTTPS & SSL</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/faq/">Frequently asked questions</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Sandstorm</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Developing apps &raquo;</li>
+        
+      
+    
+    <li>Installation</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/sandstorm-io/sandstorm/tree/master/docs" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="installation">Installation</h1>
+<p>Before we install <code>vagrant-spk</code>, some advice for how to succeed at the
+installation process.</p>
+<ul>
+<li>Learn about Sandstorm, if you haven't already. <a href="https://demo.sandstorm.io">Try using Sandstorm at our demo server</a> to get a feel for how it operates.</li>
+<li>Open a "terminal" on your Mac or Linux system or "command prompt" on Windows.</li>
+<li>Don't use sudo unless we tell you to!</li>
+</ul>
+<p><strong>System requirements</strong>: <code>vagrant-spk</code> requires a 64-bit computer with
+at least 1GB of RAM. Your computer probably is fine. We've tested this
+tutorial on Mac OS and GNU/Linux, and partly-tested on Windows.</p>
+<h2 id="ensure-git-is-installed">Ensure git is installed</h2>
+<p>In this tutorial, we use git to download some code, so you need it on your computer.</p>
+<p>In the terminal, type the following and press enter.</p>
+<pre><code class="bash">git --version
+</code></pre>
+
+<p>You should see a message like:</p>
+<pre><code class="bash">git version x.y.z
+</code></pre>
+
+<p>If so, git is properly installed and you can skip this section.</p>
+<p>If you saw instead a message like:</p>
+<pre><code class="bash">git: Command not found.
+</code></pre>
+
+<p>Then you need to install git via the following instructions.</p>
+<ul>
+<li>On Mac OS, visit the <a href="https://git-scm.com/download/mac">official git for Mac download page</a> and follow their instructions.</li>
+<li>On Ubuntu or Debian, run: <code>sudo apt-get install git</code>. (On other Linux systems, use your package manager to install git.)</li>
+<li>On Windows, git is optional. Consider installing it via the <a href="https://msysgit.github.io/">msysgit installer</a>.</li>
+</ul>
+<h2 id="ensure-vagrant-is-installed">Ensure Vagrant is installed</h2>
+<p>In this tutorial, we use Vagrant (along with other tools) to create a Linux
+virtual machine where your app will run, alongside Sandstorm.</p>
+<p>To check if it is installed, in the terminal, type the following and press enter.</p>
+<pre><code class="bash">vagrant version
+</code></pre>
+
+<p>You should see a message like:</p>
+<pre><code class="bash">Installed Version: 1.7.2
+</code></pre>
+
+<p>If so, Vagrant is installed properly, and you can skip the rest of this section.</p>
+<p>If instead you see a message like:</p>
+<pre><code class="bash">vagrant: Command not found.
+</code></pre>
+
+<p>Then you need to install Vagrant by doing the following.</p>
+<ul>
+<li>On Mac OS or Linux or Windows, visit the <a href="http://vagrantup.com/">official Vagrant
+  website</a> and follow their instructions to
+  install it.</li>
+</ul>
+<h2 id="ensure-virtualbox-is-installed">Ensure VirtualBox is installed</h2>
+<p>In this tutorial, we use VirtualBox to emulate a computer on which we run
+Linux, controlled via Vagrant.</p>
+<p>To check if it is installed, in the terminal, type the following and press
+enter:</p>
+<pre><code class="bash">VirtualBox --help
+</code></pre>
+
+<p>You should see a lot of output, for example:</p>
+<pre><code class="bash">Oracle VM VirtualBox Manager x.y.z
+(C) 2005-2015 Oracle Corporation
+All rights reserved.
+</code></pre>
+
+<p>If so, skip the rest of this section, as VirtualBox is already properly installed.</p>
+<p>If you saw instead:</p>
+<pre><code class="bash">VirtualBox: Command not found.
+</code></pre>
+
+<p>Then you need to install VirtualBox by doing following:</p>
+<ul>
+<li>Visit the <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox downloads page</a></li>
+<li>In the <strong>top</strong>, underneath <strong>VirtualBox platform packages</strong>, find the package for your operating system. Click the link, download, and install it.</li>
+<li>Once you are done with that, go to the top of this section and make sure you can see the VirtualBox help output.</li>
+</ul>
+<h2 id="no-need-to-install-sandstorm-directly">No need to install Sandstorm directly</h2>
+<p>You do <em>not</em> need Sandstorm installed on your computer before you
+start packaging an app. Sandstorm's <code>vagrant-spk</code> helper tool handles
+installing it for you.</p>
+<p>It creates a Sandstorm install unique to each app you are developing.</p>
+<h2 id="install-vagrant-spk">Install <code>vagrant-spk</code></h2>
+<p>Finally, you can install <code>vagrant-spk</code> itself. This tool uses Vagrant
+and VirtualBox so that you can run your app within Sandstorm on a
+Linux virtual machine.</p>
+<h3 id="windows-users">Windows users</h3>
+<p>Visit the <a href="https://github.com/sandstorm-io/vagrant-spk/releases">vagrant-spk releases
+list</a> and run
+the Windows installer (<code>vagrant-spk-setup-v0.xyy.exe</code>). It may need
+administrator privileges to successfully install.</p>
+<h3 id="mac-os-or-linux">Mac OS or Linux</h3>
+<p>In your terminal, run the following commands to download and install <code>vagrant-spk</code>.</p>
+<pre><code class="bash">mkdir -p ~/projects
+cd ~/projects
+git clone git://github.com/sandstorm-io/vagrant-spk
+cd vagrant-spk
+sudo ln -s $PWD/vagrant-spk /usr/local/bin
+</code></pre>
+
+<p>(Note: If you prefer different paths, that is OK.)</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../packaging-tutorial/" class="btn btn-neutral float-right" title="Packaging tutorial"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../" class="btn btn-neutral" title="Overview of vagrant-spk"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../packaging-tutorial/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

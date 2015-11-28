@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Sandcats dynamic DNS - Sandstorm</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Sandcats dynamic DNS";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../analytics.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Sandstorm</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Using</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../guided-tour/">Guided tour</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/top-bar/">Top bar</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/how-it-works/">How it works</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/security-practices/">Security practices</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developing apps</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/">Overview of vagrant-spk</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/installation/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/packaging-tutorial/">Packaging tutorial</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/packaging-tutorial-meteor/">Packaging tutorial (Meteor)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/publishing-apps/">App publishing guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/handbook/">App Developer Handbook</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/auth/">User authentication & permissions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/path/">Paths and URLs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/customizing/">Understanding & customizing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/platform-stacks/">Platform stacks</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/code-dependencies/">Code dependencies</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/services/">Service dependencies</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/web-publishing/">Web publishing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/http-apis/">Exporting HTTP APIs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/email-from-apps/">Email from apps</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/design/">vagrant-spk design document</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developing on raw Sandstorm</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/raw-packaging-guide/">Raw packaging guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/raw-python/">Raw integration of Python</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/raw-ruby-on-rails/">Raw integration of Ruby on Rails</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/raw-pure-client-apps/">Raw integration of pure client apps</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Administering</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../install/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Sandcats dynamic DNS</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#about-sandcatsio">About Sandcats.io</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#features">Features</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#how-the-https-service-works">How the HTTPS service works</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#recovering-your-domain">Recovering your domain</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#disabling-the-sandcats-service">Disabling the sandcats service</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#terms-of-service-privacy-policy-contact-information">Terms of service, privacy policy, &amp; contact information</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../email/">Email</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../demo/">Demo mode</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../backups/">Backups</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../wildcard/">Wildcard hosts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../reverse-proxy/">Reverse Proxy</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../ssl/">HTTPS & SSL</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../faq/">Frequently asked questions</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Sandstorm</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Administering &raquo;</li>
+        
+      
+    
+    <li>Sandcats dynamic DNS</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/sandstorm-io/sandstorm/tree/master/docs" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="about-sandcatsio">About Sandcats.io</h1>
+<p>Sandcats.io is a free-of-cost dynamic DNS service and HTTPS
+certificate service run by the Sandstorm development team. In a
+nutshell:</p>
+<ul>
+<li>
+<p>Sandstorm users can have a free domain name of the form
+  <code>example.sandcats.io</code>.</p>
+</li>
+<li>
+<p>Sandstorm can automatically set up that domain, including a valid
+  HTTPS certificate for it.</p>
+</li>
+<li>
+<p>It's an official part of Sandstorm and we recommend people use it!</p>
+</li>
+</ul>
+<p>In more detail:</p>
+<ul>
+<li>
+<p>Users host their own servers. A hostname like <code>example.sandcats.io</code>
+  points at the IP address of someone's server, and that server holds
+  its own private keys.</p>
+</li>
+<li>
+<p>It assumes your server should be reachable from the global Internet.</p>
+</li>
+<li>
+<p>It's an optional service. Keep reading this page to learn how to
+  stop using it.</p>
+</li>
+</ul>
+<p>The purpose is to help people who run their own server have a working
+hostname and HTTPS (TLS/SSL) certificate without having to think hard
+about the domain name system or public key infrastructure.</p>
+<h1 id="features">Features</h1>
+<p>Sandcats is <strong>integrated into the Sandstorm installer</strong> so that when
+you install Sandstorm, you get working DNS, including wildcard DNS,
+as well as working HTTPS for the main Sandstorm interface.</p>
+<p>The Sandcats backend is <strong>free, open source software</strong> under the
+Apache License 2.0; you can <a href="https://github.com/sandstorm-io/sandcats">view and participate in the
+project</a>.</p>
+<p>The Sandcats DNS service provides <strong>60-second</strong> latency for IP address
+updates via a custom UDP protocol to detect address changes. To
+achieve this low latency, when Sandcats integration is enabled, your
+Sandstorm server sends a UDP ping message to the central Sandcats
+service every 60 seconds.</p>
+<p>The Sandcats certificate service (for providing users with valid
+HTTPS) provides seven-day certificates and an API for automatic
+renewal.</p>
+<p>Sandcats uses <strong>HTTPS client certificates</strong> for authentication, which
+Sandstorm and the install script manage for users. You can find
+these certificates under <code>/opt/sandstorm/var/sandcats</code> by
+default. Please save these somewhere safe so you can hold onto your
+domain.</p>
+<h1 id="how-the-https-service-works">How the HTTPS service works</h1>
+<p>The Sandstorm install script, when it runs on your server, generates a
+private key and certificate signing request that it sends to the
+Sandcats.io service (via the <code>/getcertificate</code> JSON-RPC endpoint).</p>
+<p>Sandcats verifies that the request is coming from the owner of this
+particular <code>example.sandcats.io</code> domain name, and if so, passes the
+request along to GlobalSign for signing. The install script receives
+the signed certificate and places it in
+<code>/opt/sandstorm/var/sandcats/https/example.sandcats.io/</code>.</p>
+<p>When Sandstorm starts, it looks in the above directory for keys &amp;
+certificates and uses the first certificate that is valid.</p>
+<p>These certificates expire weekly, so Sandstorm also checks every
+(approximately) 2 hours if the certificate it is using is on the last
+3 days of its lifetime. If so, Sandstorm takes the same action as the
+install script: generate new key, generate certificate signing
+request, send that to Sandcats.io, store the response. (As an
+implementation detail, these certs technically last 9 days, but we
+renew them every 7 days.)</p>
+<p>Sandstorm automatically starts using new certificates without needing
+intervention from the server operator. You can read the code that
+powers that in <code>meteor-bundle-main.js</code> in the <code>sandstorm</code> git
+repository.</p>
+<h1 id="recovering-your-domain">Recovering your domain</h1>
+<p><strong>Email-based recovery:</strong></p>
+<p>If you have lost your three <code>id_rsa</code> files: When you are installing
+Sandstorm on a new server, you can <strong>recover a domain</strong> automatically
+by using the Sandstorm installer and typing <code>help</code> at the Sandcats
+prompts.</p>
+<p><strong>File-based recovery:</strong></p>
+<p>To manually recover a domain:</p>
+<ul>
+<li>
+<p>Find your three three <code>id_rsa</code> certificate files (usually
+  <code>/opt/sandstorm/var/sandcats</code>) and keep them safe somewhere.</p>
+</li>
+<li>
+<p>Do a new Sandstorm install, probably to <code>/opt/sandstorm</code>.</p>
+</li>
+<li>
+<p>Copy those three <code>id_rsa</code> certificate files into the Sandcats
+  directory (usually <code>/opt/sandstorm/var/sandcats</code>).</p>
+</li>
+<li>
+<p>In your new Sandstorm install, ensure you have your <code>BASE_URL</code> and
+  <code>WILDCARD_HOST</code> set properly in your <code>sandstorm.conf</code>.</p>
+</li>
+<li>
+<p>Edit <code>sandstorm.conf</code> to contain this line:
+  <code>SANDCATS_BASE_DOMAIN=sandcats.io</code></p>
+</li>
+<li>
+<p>Now restart Sandstorm <code>sandstorm stop ; sandstorm start</code>, and wait
+  at least 60 seconds.</p>
+</li>
+<li>
+<p>Your DNS hostname should have auto-updated. Check that DNS is
+  working with <code>nslookup &lt;myname&gt;.sandcats.io</code> from another
+  machine. This will help eliminate DNS as an issue when trying to
+  access your server.</p>
+</li>
+</ul>
+<h1 id="disabling-the-sandcats-service">Disabling the sandcats service</h1>
+<p>If you want to run Sandstorm without the Sandcats service, remove the</p>
+<pre><code class="bash">SANDCATS_BASE_DOMAIN=...
+</code></pre>
+
+<p>line from your <code>/opt/sandstorm/sandstorm.conf</code>. That will disable the
+functionality. Note that this does not delete any domains you
+registered. It does cause them to stop updating.</p>
+<h1 id="terms-of-service-privacy-policy-contact-information">Terms of service, privacy policy, &amp; contact information</h1>
+<p>Sandcats.io has the following formal documents:</p>
+<ul>
+<li><a href="https://sandcats.io/privacy">Sandcats.io privacy policy</a></li>
+<li><a href="https://sandcats.io/terms">Sandcats.io terms of service</a></li>
+</ul>
+<p>If you have more questions, or are having trouble, email:</p>
+<p><a href="mailto:support@sandstorm.io">support@sandstorm.io</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../email/" class="btn btn-neutral float-right" title="Email"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../install/" class="btn btn-neutral" title="Installation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../../install/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../email/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

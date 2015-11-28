@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>App publishing guide - Sandstorm</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "App publishing guide";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../analytics.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Sandstorm</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Using</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../guided-tour/">Guided tour</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/top-bar/">Top bar</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/how-it-works/">How it works</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/security-practices/">Security practices</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developing apps</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/">Overview of vagrant-spk</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/installation/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/packaging-tutorial/">Packaging tutorial</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/packaging-tutorial-meteor/">Packaging tutorial (Meteor)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">App publishing guide</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#app-publishing-guide">App publishing guide</a></li>
+                
+                    <li><a class="toctree-l4" href="#get-feedback-on-your-app">Get feedback on your app</a></li>
+                
+                    <li><a class="toctree-l4" href="#double-check-your-app-id">Double-check your app ID</a></li>
+                
+                    <li><a class="toctree-l4" href="#verify-your-identity">Verify your identity</a></li>
+                
+                    <li><a class="toctree-l4" href="#add-required-metadata">Add required metadata</a></li>
+                
+                    <li><a class="toctree-l4" href="#check-your-work">Check your work</a></li>
+                
+                    <li><a class="toctree-l4" href="#send-to-the-sandstorm-app-market">Send to the Sandstorm App Market</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../handbook/">App Developer Handbook</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../auth/">User authentication & permissions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../path/">Paths and URLs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/customizing/">Understanding & customizing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/platform-stacks/">Platform stacks</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/code-dependencies/">Code dependencies</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/services/">Service dependencies</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../web-publishing/">Web publishing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../http-apis/">Exporting HTTP APIs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../email-from-apps/">Email from apps</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/design/">vagrant-spk design document</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developing on raw Sandstorm</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../raw-packaging-guide/">Raw packaging guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../raw-python/">Raw integration of Python</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../raw-ruby-on-rails/">Raw integration of Ruby on Rails</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../raw-pure-client-apps/">Raw integration of pure client apps</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Administering</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../install/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/sandcats/">Sandcats dynamic DNS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/email/">Email</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/demo/">Demo mode</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/backups/">Backups</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/wildcard/">Wildcard hosts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/reverse-proxy/">Reverse Proxy</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/ssl/">HTTPS & SSL</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/faq/">Frequently asked questions</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Sandstorm</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Developing apps &raquo;</li>
+        
+      
+    
+    <li>App publishing guide</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/sandstorm-io/sandstorm/tree/master/docs" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="app-publishing-guide">App publishing guide</h1>
+<p>After you've completed developing and testing your app's package for Sandstorm, you can publish it in the <a href="https://apps.sandstorm.io/">Sandstorm App Market</a>.</p>
+<h2 id="get-feedback-on-your-app">Get feedback on your app</h2>
+<p>Before publishing an app to the Sandstorm app market, we recommend you
+email the <a href="https://groups.google.com/forum/#!forum/sandstorm-dev">Sandstorm development email
+list</a> with a
+link to your package, to get feedback. Consider creating a
+<a href="https://apps.sandstorm.io/app/nn7axgy3y8kvd0m1mtk3cwca34t916p5d7m4j1j2e874nuz3t8y0">FileDrop</a>
+grain containing your SPK file.</p>
+<p>The <a href="https://github.com/sandstorm-io/sandstorm/wiki/Testing">app testing guide</a> provides
+some guidelines for what to look for while testing.</p>
+<h2 id="double-check-your-app-id">Double-check your app ID</h2>
+<p>Sandstorm identifies every app by a <a href="http://ed25519.cr.yp.to/">public
+key</a> authorized to sign updates for that
+app. The public key corresponds to a <strong>private key</strong> stored on your
+computer in <code>~/.sandstorm/sandstorm-keyring</code>.</p>
+<p>You can find the app ID for your app in your
+<code>sandstorm-pkgdef.capnp</code>. It will have a line like:</p>
+<pre><code class="bash">  id = &quot;vfnwptfn02ty21w715snyyczw0nqxkv3jvawcah10c6z7hj1hnu0&quot;,
+  # Your app ID is actually its public key. The private key was placed in
+  # your keyring. All updates must be signed with the same key.
+</code></pre>
+
+<p>It's <strong><em>essential</em></strong> that you control this key! If you think someone
+else might have the key material for your app, now is a good time to
+change it.</p>
+<p>To find out if you have the key material, you can run:</p>
+<pre><code class="bash">$ vagrant-spk ssh
+$ spk listkeys -k ~/.sandstorm/sandstorm-keyring
+</code></pre>
+
+<p>You should see the app ID in the output.</p>
+<p>If you want to change the app ID before publishing the app, you
+can run:</p>
+<pre><code class="bash">$ vagrant-spk ssh
+$ spk keygen -k ~/.sandstorm/sandstorm-keyring
+</code></pre>
+
+<p>It will output a line like:</p>
+<pre><code>9qvtkns7m215pfc12jeyuunfj0wr5m6rwktw61vatdz22uva0qmh
+</code></pre>
+
+<p>which you can copy &amp; paste into the <code>id = ...</code> line of
+<code>sandstorm-pkgdef.capnp</code>.</p>
+<p><strong>Technical notes:</strong> <code>vagrant-spk</code> enables the above workflow because
+<code>~/.sandstorm</code> is shared into the Vagrant VM, so all keys are
+available from all packaging VMs. Note that <code>vagrant-spk</code> is optional;
+if you are using the raw <code>spk</code> packaging tool, note that you may have
+stored keys in <code>~/.sandstorm-keyring</code> instead of
+<code>~/.sandstorm/sandstorm-keyring</code>.  This key is an
+<a href="http://ed25519.cr.yp.to/">Ed25519</a> key.</p>
+<h2 id="verify-your-identity">Verify your identity</h2>
+<p>The next step is to prove that <em>you</em> own the app ID, so that the
+<a href="https://apps.sandstorm.io/">Sandstorm app market</a> can confidently
+list your contact details on your app's listing page.</p>
+<p>The process is that you will:</p>
+<ul>
+<li>
+<p>Create a standardized text file of the form: <code>I am the author of the Sandstorm.io app with the following ID: &lt;app-id&gt;</code>.</p>
+</li>
+<li>
+<p>Use GPG to digitally sign the text.</p>
+</li>
+<li>
+<p>Use Keybase.io to confirm a link between your GPG identity and your
+  Twitter, GitHub, personal website, or other social identities.</p>
+</li>
+</ul>
+<p>Sandstorm uses the <strong><em>app ID key</em></strong> to permit updates to the next
+version of the app, and the app ID key is required.</p>
+<p>The GPG and Keybase integration affects how your name is presented
+when Sandstorm users try to find out who published the app. It is
+optional but highly recommended.</p>
+<h3 id="sign-up-with-keybaseio">Sign up with <a href="https://keybase.io">Keybase.io</a></h3>
+<p>Currently, Keybase is invite-only. If you need an invite, you can
+contact <a href="mailto:community@sandstorm.io">community@sandstorm.io</a>. You
+should connect some of your public identites with your Keybase
+account, like Twitter and GitHub.</p>
+<p>Sandstorm app authors are verified using a PGP key linked to
+Keybase. You should get the
+<a href="https://keybase.io/docs/command_line/prerequisites">prerequisites</a>
+and follow <a href="https://keybase.io/docs/command_line/installation">their
+directions</a> to get
+their software set up.</p>
+<h3 id="link-your-sandstorm-package-with-your-keybase-key">Link your Sandstorm package with your Keybase key</h3>
+<p>In order to verify that you are the author of the app in question, you need to sign the following ASCII statement: <code>I am the author of the Sandstorm.io app with the following ID: &lt;app-id&gt;</code>, where <code>&lt;app-id&gt;</code> is the one from your <code>sandstorm-pkgdef.capnp</code> file.</p>
+<p>To generate a pgp-signature file using gpg, run a command like this:</p>
+<p><code>echo -n "I am the author of the Sandstorm.io app with the following ID: &lt;app-id&gt;" |
+     gpg --sign &gt; pgp-signature</code></p>
+<p>If you do it correctly, <code>cat pgp-signature | gpg</code> should print out the statement that you signed.</p>
+<h3 id="export-your-public-key">Export your public key</h3>
+<p>To verify your signature, you also need to export your public key and include it in your app package. You can run the following command, where <code>&lt;key-id&gt;</code> is a PGP key ID or a username associated with the key:</p>
+<p><code>gpg --export &lt;key-id&gt; --export-options export-minimal &gt; pgp-keyring</code></p>
+<h2 id="add-required-metadata">Add required metadata</h2>
+<p>Your app's manifest, or package definition file, (<code>sandstorm-pkgdef.capnp</code>) contains all of the metadata to list it in the app store, including descriptions, screenshots, categories, and more. You can look at <a href="https://github.com/kentonv/etherpad-lite/blob/sandstorm/sandstorm-pkgdef.capnp">Etherpad's manifest</a> for an example of how the data is formatted, and the most current version of the file which defines acceptable fields and values for package definition files can be found <a href="https://github.com/sandstorm-io/sandstorm/blob/master/src/sandstorm/package.capnp">here</a>. You can see Etherpad's app store listing <a href="https://apps.sandstorm.io/app/h37dm17aa89yrd8zuqpdn36p6zntumtv08fjpu8a8zrte7q1cn60">here</a>.</p>
+<h3 id="metadata-guide">Metadata guide</h3>
+<h4 id="icons">icons</h4>
+<p>You can embed both SVGs or PNGs, and Sandstorm will use the best version provided for the use in question. Using PNGs requires a slightly different structure, which you can find an example of <a href="https://github.com/dwrensha/sharelatex/blob/sandstorm-app/sandstorm-pkgdef.capnp#L26">here</a>.</p>
+<ul>
+<li>The <code>appGrid</code> icon represents your app on the "New" screen on Sandstorm. It should be 128 x 128 pixels, and no larger than 64 KB.</li>
+<li>The <code>grain</code> icon represents individual grains on both the navbar and the grain list. It should be 24 x 24 pixels, and no larger than 4 KB. If you omit this, the appGrid icon will be used.</li>
+<li>The <code>market</code> icon is used in the app market. It should be 150 x 150 pixels, and no larger than 256 KB. If you omit this, the appGrid icon will be used.</li>
+<li>The <code>marketBig</code> icon is used on an app's specific page on the app market. It should be 300 x 300 pixels, and no larger than 256 KB. If you omit this, the market icon will be used (raster images may look bad).</li>
+</ul>
+<h4 id="website">website</h4>
+<p>This should be the app's main website URL.</p>
+<h4 id="codeurl">codeUrl</h4>
+<p>This should be the URL of the app's source code repository, like GitHub. It is recommended if there is a repository specific to the Sandstorm package, you utilize that one, rather than the upstream one. This field is mandatory if you utilize a license that requires redistributing code, like the GPL, but is optional otherwise.</p>
+<h4 id="license">license</h4>
+<p>This is how you will specify the license under which you are distributing the app. The default is <code>none</code>, which conveys no rights of redistribution to the user.</p>
+<p>Currently, the following open source licenses are recognized: <code>mit</code>, <code>apache2</code>, <code>gpl3</code>, <code>agpl3</code>, <code>bsd3Clause</code>, <code>bsd2Clause</code>, <code>gpl2</code>, <code>lgpl2</code>, <code>lgpl3</code>, <code>isc</code>, <code>artistic2</code>, <code>python2</code>, <code>php3</code>, <code>mpl2</code>, <code>cddl</code>, <code>epl</code>, and <code>cpal</code>. If you need to add an additional license, you can open an issue or submit a pull request.</p>
+<p>You can select <code>openSource</code> and specify an OSI-approved license, or select <code>proprietary</code> and embed the full text of the license. If you choose a proprietary license, which may contain more restrictive permissions, Sandstorm will display the license to the user and have them accept it before they are able to use the app. If your app does not contain more restrictive permissions, you may consider releasing under <code>none</code> to avoid this. Finally, <code>publicDomain</code> is also available, but it is preferable to use a permissive open source license instead.</p>
+<p>You may also need to include <code>notices</code> if your app is required to display any third-party copyright notices, for example due to use of third-party open source libraries.</p>
+<h4 id="categories">categories</h4>
+<p>You may select the market categories to which your app belongs. You may select multiple, but you may be asked to make changes if the market moderators feel they are inappropriate.</p>
+<p>Currently, the following categories are accepted:</p>
+<ul>
+<li><code>productivity</code> is for apps you use to get organized, not the apps you use to produce content. (Examples: Note-taking apps, kanban boards, project management.)</li>
+<li><code>communications</code> is for apps you use to directly communicate with others. (Examples: Chat apps, email apps.)</li>
+<li><code>social</code> is for apps used for social networking, where content is shared and networks of people are managed.</li>
+<li><code>webPublishing</code> is for apps used for publishing websites and blogs.</li>
+<li><code>office</code> is for apps which are tools commonly used for office. (Examples: Word processors, spreadsheets, presentation apps.)</li>
+<li><code>developerTools</code> is for apps which are tools for software development. (Examples: Source control, test automation, compilers, IDEs.)</li>
+<li><code>science</code> is for apps used for scientific and academic pursuits. (Examples: Data gathering, data processing, paper publishing.)</li>
+<li><code>graphics</code> is for apps used to create graphics and artwork.</li>
+<li><code>media</code> is for apps used to consume media such as music, movies, and photos.</li>
+<li><code>games</code> is for apps that let you play games by yourself or with others.</li>
+<li><code>other</code> is for apps which fit into no other category. But you may wish to suggest we add a category if none currently applies.</li>
+</ul>
+<h4 id="author">author</h4>
+<p>The author can be an individual, organization, or even a pseudo-identity representing the app. In order for users to be able to verify the author of a package, the app author must also be identified by PGP key. The Sandstorm team recommends using keybase.io.</p>
+<ul>
+<li>The <code>upstreamAuthor</code> is the name of the primary author of the original app. This indicates the author identified by the key ported the app, which was developed by someone else. If the original author is the one publishing the app, do not include this.</li>
+<li>The <code>contactEmail</code> is the address to contact for any issues with this app. This both includes administrative issues with the app market listing as well as end user support requests. It is very important that this email be monitored.</li>
+<li>The <code>pgpSignature</code> field is where you embed a signed ASCII statement verifying that you are the author of this app package.</li>
+</ul>
+<h4 id="pgpkeyring">pgpKeyring</h4>
+<p>This is where you embed a keyring in GPG keyring format containing the public key needed to verify your signature.</p>
+<h4 id="description">description</h4>
+<p>You should embed a description of your app in GitHub-flavored Markdown. It may not contain HTML or image tags, as you can attach screenshots separately.</p>
+<h4 id="shortdescription">shortDescription</h4>
+<p>Include two or three words here that briefly characterize your app. This is shown in the app card to people as they browse the market, and can communicate what type of app it is, like a "document editor" or a "media player".</p>
+<h4 id="screenshots">screenshots</h4>
+<p>You can attach a number of screenshots here. You should specify the height and width of the picture here in pixels. You may embed PNGs or JPGs here. Your total metadata should be less than 1 MB in size, so be sure to use JPGs on photo-like screenshots.</p>
+<h4 id="changelog">changeLog</h4>
+<p>Here you may embed a log of changes in GitHub-flavored Markdown. It is recommended to format this with a H1 heading for each release followed by a bullet list of changes. As an example, you can look at Etherpad's changelog <a href="https://raw.githubusercontent.com/kentonv/etherpad-lite/sandstorm/CHANGELOG.md">here</a>.</p>
+<h2 id="check-your-work">Check your work</h2>
+<p>Consider working through the <a href="https://github.com/sandstorm-io/sandstorm/wiki/Testing">app testing
+guide</a> and/or
+emailing your app to the <a href="https://groups.google.com/forum/#!forum/sandstorm-dev">sandstorm-dev email
+group</a>.</p>
+<p>You can run <code>spk verify mypackage.spk</code> on your app package to see the details of your metadata. Ensure everything looks like it is supposed to before you publish your app.</p>
+<h2 id="send-to-the-sandstorm-app-market">Send to the Sandstorm App Market</h2>
+<p>In order to submit your app to the market, you need to run one of the following commands, depending on your build tool: <code>spk publish mypackage.spk</code> or <code>vagrant-spk publish mypackage.spk</code>.</p>
+<p>It will then go into the queue for us to review. We'll check that everything looks right. If it does, we'll publish the app, otherwise we'll email you to let you know what needs fixing.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../handbook/" class="btn btn-neutral float-right" title="App Developer Handbook"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../vagrant-spk/packaging-tutorial-meteor/" class="btn btn-neutral" title="Packaging tutorial (Meteor)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../../vagrant-spk/packaging-tutorial-meteor/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../handbook/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

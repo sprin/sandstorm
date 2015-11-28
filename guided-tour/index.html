@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Guided tour - Sandstorm</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Guided tour";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+  <script src="../analytics.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Sandstorm</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Using</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../using/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Guided tour</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#guided-tour-of-sandstorm-including-install">Guided tour of Sandstorm, including install</a></li>
+                
+                    <li><a class="toctree-l4" href="#optional-install-sandstorm">Optional: Install Sandstorm</a></li>
+                
+                    <li><a class="toctree-l4" href="#hands-on-tour">Hands-on tour</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../using/top-bar/">Top bar</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../using/how-it-works/">How it works</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../using/security-practices/">Security practices</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developing apps</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../developing/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../vagrant-spk/">Overview of vagrant-spk</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../vagrant-spk/installation/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../vagrant-spk/packaging-tutorial/">Packaging tutorial</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../vagrant-spk/packaging-tutorial-meteor/">Packaging tutorial (Meteor)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../developing/publishing-apps/">App publishing guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../developing/handbook/">App Developer Handbook</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../developing/auth/">User authentication & permissions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../developing/path/">Paths and URLs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../vagrant-spk/customizing/">Understanding & customizing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../vagrant-spk/platform-stacks/">Platform stacks</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../vagrant-spk/code-dependencies/">Code dependencies</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../vagrant-spk/services/">Service dependencies</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../developing/web-publishing/">Web publishing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../developing/http-apis/">Exporting HTTP APIs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../developing/email-from-apps/">Email from apps</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../vagrant-spk/design/">vagrant-spk design document</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../developing/troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developing on raw Sandstorm</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../developing/raw-packaging-guide/">Raw packaging guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../developing/raw-python/">Raw integration of Python</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../developing/raw-ruby-on-rails/">Raw integration of Ruby on Rails</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../developing/raw-pure-client-apps/">Raw integration of pure client apps</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Administering</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../administering/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../install/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../administering/sandcats/">Sandcats dynamic DNS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../administering/email/">Email</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../administering/demo/">Demo mode</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../administering/backups/">Backups</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../administering/wildcard/">Wildcard hosts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../administering/reverse-proxy/">Reverse Proxy</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../administering/ssl/">HTTPS & SSL</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../administering/faq/">Frequently asked questions</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Sandstorm</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Using &raquo;</li>
+        
+      
+    
+    <li>Guided tour</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/sandstorm-io/sandstorm/tree/master/docs" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="guided-tour-of-sandstorm-including-install">Guided tour of Sandstorm, including install</h1>
+<p>Format: Self-driven hands-on tutorial</p>
+<p>If you have 15 minutes and want to learn more about Sandstorm, enjoy this hands-on tour. After you work through it, you will:</p>
+<ul>
+<li>Understand how installing apps and creating documents/instances works in Sandstorm.</li>
+<li>Understand how app instance sharing works in Sandstorm.</li>
+<li>Understand the current limits of Sandstorm, and where the project is headed in the future.</li>
+<li>(If desired) have a free-of-cost virtual machine, hosted by Amazon, to run Sandstorm on for a year, or at DigitalOcean with a coupon code.</li>
+</ul>
+<h2 id="optional-install-sandstorm">Optional: Install Sandstorm</h2>
+<p>You can proceed through this tutorial using the <a href="https://demo.sandstorm.io/">Sandstorm demo server</a> at https://demo.sandstorm.io. By default, we will have you do that.</p>
+<p>If you wish, you could take the time now to install Sandstorm on a Linux server of your own. Amazon offers a free-of-cost one year trial where you can use their hosting services for free. To do that, keep reading.</p>
+<p>If you don't want to install Sandstorm right now, skip to the <strong>Hands on tour</strong> section.</p>
+<h3 id="create-a-virtual-machine-in-amazon-ec2">Create a virtual machine in Amazon EC2</h3>
+<p>Amazon's EC2 service is oriented toward software developers and system administrators, and so its control panel is filled with options. This section explains what you need to know to create a new virtual Linux server hosted by Amazon EC2 to run Sandstorm.</p>
+<p>To set that up, follow this <a href="http://www.canopy.link/dz/launch_ec2_instance.html">excellent tutorial</a>. After you've done that, you should be able to:</p>
+<ul>
+<li>See your virtual machine in Amazon's EC2 web console, and</li>
+<li>Log in to it remotely over SSH.</li>
+</ul>
+<p>If so, proceed to the next section.</p>
+<h3 id="configure-the-ec2-security-groups-firewall-to-let-you-reach-sandstorm">Configure the EC2 security groups (firewall) to let you reach Sandstorm</h3>
+<p>By default, Amazon EC2 protects your virtual machine from being reached over the Internet.</p>
+<p>In the above tutorial, we allow the virtual machine to be reached on <strong>port 80</strong>. By default, Sandstorm uses <strong>port 6080</strong>, so look through the above tutorial and add another <em>security groups</em> rule allowing port 6080.</p>
+<h3 id="ssh-in-and-run-the-sandstorm-install-script">SSH in, and run the Sandstorm install script</h3>
+<p>Follow the instructions at <a href="https://sandstorm.io/install/">https://sandstorm.io/install/</a>.</p>
+<p>I personally recommend using the Google login provider, but naturally you can choose any you like.</p>
+<p>Sandstorm comes with a dynamic DNS service for free, so you once you install Sandstorm, your server will be online at a name like <em>http://garply.sandcats.io:6080/</em>.</p>
+<h3 id="proceed-with-the-guided-tour">Proceed with the guided tour</h3>
+<p>Now that your server is online, and has a name, you can use it in the rest of this guided tour instead of the demo server.</p>
+<h2 id="hands-on-tour">Hands-on tour</h2>
+<p>During this tutorial, you're going to try out some cool features of Sandstorm. You can try them out using the Sandstorm demo server at <a href="https://demo.sandstorm.io/">https://demo.sandstorm.io/</a>.</p>
+<p><strong>Note: demo data is temporary.</strong> Accounts on the Sandstorm demo server expire after one hour! By contrast, when you run Sandstorm yourself, you keep your data for as long as you like.</p>
+<h3 id="like-google-apps-but-open-source-and-on-your-own-server">Like Google Apps, but open source and on your own server</h3>
+<p>One of the common reasons to use Sandstorm is to have online collaboration software that runs on your own server.</p>
+<p>Etherpad is a real-time text editor that demonstrates how to use Sandstorm that way. Make sure you're logged into Sandstorm (if using the demo, click <strong>Start the demo</strong>). Then click:</p>
+<ul>
+<li><strong>Install apps</strong> - this takes you to the Sandstorm app list. (Soon to be the Sandstorm App Marketplace!)</li>
+<li>Click the <strong>Install</strong> button next to <em>Etherpad</em>. (Sandstorm may ask you for confirmation.)</li>
+<li>Click <strong>New Etherpad Document</strong> button on your Sandstorm.</li>
+</ul>
+<p>You're now in an Etherpad document. Installing Etherpad allows you to create as many Etherpad documents as you want.</p>
+<p>If you want to create spreadsheets on your server, consider installing <em>Ethercalc</em>.</p>
+<p>If you want to edit scientific documents, consider installing <em>ShareLaTeX</em>.</p>
+<p>If you want to create presentations, consider installing <em>Hacker Slides</em>.</p>
+<p>Each document is an _instance_of that app, with Sandstorm isolating each one from each other.</p>
+<h3 id="sharing">Sharing</h3>
+<p>In Sandstorm, each app instance is private by default. In order to collaborate, you create a <em>sharing link</em>.</p>
+<p>In your Etherpad document, look for the blue <strong>Share</strong> link at the top (or the side) of the document. Click it, choose a permission level, and click <strong>create</strong>.</p>
+<p>When you give this link to someone, they will be able to participate in the document with you.</p>
+<p>To read more about sharing in Sandstorm, read <a href="https://blog.sandstorm.io/news/2015-05-05-delegation-is-the-cornerstone-of-civilization.html">Delegation is the cornerstone of civilization</a>.</p>
+<h3 id="static-publishing">Static publishing</h3>
+<p>Sandstorm supports a number of publishing apps, including WordPress and Ghost. (The <a href="https://blog.sandstorm.io/">Sandstorm blog</a> is hosted on our own Sandstorm instance using a custom app called Hacker CMS.)</p>
+<p>Try them out!</p>
+<ul>
+<li>Click the <strong>Sandstorm</strong> logo in the top-left, and</li>
+<li>Click <strong>Install apps</strong> and</li>
+<li>Find <em>WordPress</em> or <em>Ghost</em> on the page, and click *<em>Install</em>.</li>
+<li>Click <strong>New WordPress site</strong> (or similar for Ghost).</li>
+</ul>
+<p>This takes you to WordPress running on your server. You are automatically logged-in and can start writing. You can click <strong>Regenerate public site</strong> and this snapshots your blog as static HTML and exports it at a random hostname.</p>
+<p>You can also configure a custom domain to map to the same static content. Only people with whom you <strong>share</strong> the WordPress instance can interact with WordPress's PHP code. The result is that WordPress becomes a security-hardened collaborative static site generator.</p>
+<h3 id="ask-questions">Ask questions</h3>
+<p>This brings us to the end of our tour. Ask questions! Also give me feedback on how to improve this tour.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../using/top-bar/" class="btn btn-neutral float-right" title="Top bar"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../using/" class="btn btn-neutral" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../using/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../using/top-bar/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

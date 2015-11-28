@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Raw packaging guide - Sandstorm</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Raw packaging guide";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../analytics.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Sandstorm</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Using</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../guided-tour/">Guided tour</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/top-bar/">Top bar</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/how-it-works/">How it works</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/security-practices/">Security practices</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developing apps</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/">Overview of vagrant-spk</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/installation/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/packaging-tutorial/">Packaging tutorial</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/packaging-tutorial-meteor/">Packaging tutorial (Meteor)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../publishing-apps/">App publishing guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../handbook/">App Developer Handbook</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../auth/">User authentication & permissions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../path/">Paths and URLs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/customizing/">Understanding & customizing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/platform-stacks/">Platform stacks</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/code-dependencies/">Code dependencies</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/services/">Service dependencies</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../web-publishing/">Web publishing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../http-apis/">Exporting HTTP APIs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../email-from-apps/">Email from apps</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/design/">vagrant-spk design document</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developing on raw Sandstorm</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Raw packaging guide</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#raw-packaging-guide">Raw packaging guide</a></li>
+                
+                    <li><a class="toctree-l4" href="#prerequisites">Prerequisites</a></li>
+                
+                    <li><a class="toctree-l4" href="#framework-specific-toolsguides">Framework-specific tools/guides</a></li>
+                
+                    <li><a class="toctree-l4" href="#generic-steps">Generic steps</a></li>
+                
+                    <li><a class="toctree-l4" href="#tips-and-tricks">Tips and Tricks</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../raw-python/">Raw integration of Python</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../raw-ruby-on-rails/">Raw integration of Ruby on Rails</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../raw-pure-client-apps/">Raw integration of pure client apps</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Administering</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../install/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/sandcats/">Sandcats dynamic DNS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/email/">Email</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/demo/">Demo mode</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/backups/">Backups</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/wildcard/">Wildcard hosts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/reverse-proxy/">Reverse Proxy</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/ssl/">HTTPS & SSL</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/faq/">Frequently asked questions</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Sandstorm</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Developing on raw Sandstorm &raquo;</li>
+        
+      
+    
+    <li>Raw packaging guide</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/sandstorm-io/sandstorm/tree/master/docs" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="raw-packaging-guide">Raw packaging guide</h1>
+<p>This tutorial will show you how to package an app for Sandstorm using
+the raw <code>spk</code> tooling, helping you understand Sandstorm at a deeper
+level.</p>
+<p><strong>Note:</strong> If you're new to Sandstorm packaging, or don't run Linux as
+your main operating system, please read the <a href="../../vagrant-spk/packaging-tutorial/">Five minute packaging
+tutorial</a> first!</p>
+<p>A Sandstorm application package includes the entire userspace needed
+to run your app, including all binaries, libraries, modules,
+etc. Normally, figuring out exactly what to put in a package could be
+tedious. Sandstorm makes it easy by employing a trick: it watches your
+server running on your development machine and pulls in all the files
+the server uses.</p>
+<p>Let's walk through an example.</p>
+<p>(If you get stuck, see <a href="../troubleshooting/">Packaging Troubleshooting</a>.)</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ol>
+<li>Learn about Sandstorm, if you haven't already.</li>
+<li><a href="https://demo.sandstorm.io">Try using Sandstorm</a> to get a feel for how it operates.</li>
+<li>
+<p><a href="../handbook/">Read the App Developer Handbook</a> to understand the higher-level design issues faced by Sandstorm apps.</p>
+</li>
+<li>
+<p>Install Sandstorm on your local machine.</p>
+</li>
+<li>Install Linux. Kernel version 3.13 or later. <a href="http://ubuntu.com">Ubuntu</a> 14.04 is sufficient.</li>
+<li>Install Sandstorm: <code>curl https://install.sandstorm.io | bash</code><ul>
+<li>You will use this local Sandstorm server for development, so make sure it's running.</li>
+<li>Make sure to make yourself a member of the server's group, usually called <code>sandstorm</code>.
+  You may have to log out and back in before this takes effect.</li>
+</ul>
+</li>
+</ol>
+<h2 id="framework-specific-toolsguides">Framework-specific tools/guides</h2>
+<p>For some frameworks, we have special tools and/or guides to help you package apps more easily:</p>
+<ul>
+<li><a href="https://meteor.com">Meteor</a>: Use <a href="https://github.com/sandstorm-io/meteor-spk">meteor-spk</a>.</li>
+<li>Python: See <a href="../raw-python/">Python</a>.</li>
+<li>Ruby on Rails: See <a href="../raw-ruby-on-rails/">Ruby on Rails</a>.</li>
+<li>Pure-client/browser-side: (e.g. <a href="https://unhosted.org">Unhosted</a>-style) See <a href="../raw-pure-client-apps/">Pure client apps</a>.</li>
+<li>(more soon)</li>
+</ul>
+<p>Even if your framework is listed above, you should still read everything on this page as well in order to better understand Sandstorm.</p>
+<h2 id="generic-steps">Generic steps</h2>
+<h3 id="write-an-app">Write an app</h3>
+<p>You can write your app on absolutely any tech stack that runs on Linux. Write a web app the way you normally would. Make sure it stores all data under <code>/var</code>, because the rest of the filesystem will be read-only when running in Sandstorm.</p>
+<p>For the sake of this tutorial, we'll use this simple <a href="http://nodejs.org">Node.js</a> app, which will call <code>main.js</code>:</p>
+<pre><code>var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+}).listen(10000, '127.0.0.1');
+console.log('Server running at http://127.0.0.1:10000/');
+</code></pre>
+<p>Make sure you have Node installed, so that this app runs when you type:</p>
+<pre><code>node main.js
+</code></pre>
+<h3 id="create-a-sandstorm-package-definition">Create a Sandstorm package definition</h3>
+<p>In your app's source directory, type:</p>
+<pre><code>spk init -p 10000 -- node main.js
+</code></pre>
+<p>This tells Sandstorm that the command to start your app is <code>node main.js</code> and that it can then connect to the HTTP interface on port 10000.</p>
+<p>This command will write the file <code>sandstorm-pkgdef.capnp</code> capturing the new configuration. Feel free to open it up and see what has been written. You can adjust a lot of things here.</p>
+<h3 id="test-your-app-in-dev-mode">Test your app in dev mode</h3>
+<p>Again in your package directory, type:</p>
+<pre><code>spk dev
+</code></pre>
+<p>This command temporarily registers your app with your locally-installed Sandstorm server. If you browse to your server and look at your files menu, you'll now see that your app is available there and you can create a new instance. Do so, and make sure it works.</p>
+<p>While in dev mode, make sure to test <em>all</em> of the features of your app. Sandstorm is watching what your app does and is making a list of all of your app's runtime dependencies, so it can make a package out of them. If you don't test a feature in dev mode, it might not work in production.</p>
+<p>Your app's console (debug) output can be viewed by clicking the wrench icon in the top bar.</p>
+<p>If something is not working and your own debug logs aren't helping, you may also want to check the Sandstorm server's main logs in:</p>
+<pre><code>/opt/sandstorm/var/log/sandstorm.log
+</code></pre>
+<p>When done testing, press <code>Ctrl+C</code> at your terminal to exit dev mode.</p>
+<h3 id="inspect-the-file-list">Inspect the file list</h3>
+<p>The <code>spk</code> tool has created a text file called <code>sandstorm-files.list</code> listing all the files used by your app. Open it in a text editor and verify that it looks reasonable. You may in particular want to verify that it hasn't pulled in any personal files from your system, although the default configuration hides <code>/home</code> and <code>/var</code> which should stop most leaks. If any files look wrong, you should remove them from the list, and then edit <code>sandstorm-pkgdef.capnp</code> to list those files as "hidden" so that they don't get re-added to the list the next time you run in dev mode. You should probably also re-run <code>spk dev</code> and test your app again.</p>
+<p>Pay particular attention to files taken from <code>/etc</code>. Unfortunately, many apps rely on configuration found it <code>/etc</code> for basic operation, but files in <code>/etc</code> are often fairly specific to your host system and thus may not belong in your app package. If you want to override a file from <code>/etc</code> that your app needs, simply create at <code>etc</code> directory in your source tree and put a different version of the file there. The default <code>sandstorm-pkgdef.capnp</code> maps <code>.</code> over <code>/</code>, so it will prefer <code>./etc/foo</code> over <code>/etc/foo</code> to satisfy a requirement for <code>etc/foo</code>.</p>
+<h3 id="build-your-package">Build your package</h3>
+<p>Type:</p>
+<pre><code>spk pack my-app.spk
+</code></pre>
+<p>This will build <code>my-app.spk</code> for distribution. You can upload this to any Sandstorm server by going to the <code>/install</code> URL.</p>
+<h3 id="publish-your-app">Publish your app</h3>
+<p>If you packaged a cool app to Sandstorm, <a href="https://groups.google.com/group/sandstorm-dev">we want to know about it</a>!</p>
+<p>You should check out the <a href="../publishing-apps/">app publishing guide</a> for details on how to submit your app to the <a href="https://apps.sandstorm.io">App Market</a>.</p>
+<h2 id="tips-and-tricks">Tips and Tricks</h2>
+<h3 id="accessing-external-resources">Accessing external resources</h3>
+<p>By default, your app does not have network access, even on the server side. It can only answer HTTP request from the user. If you need access to things in the outside world, you will have to request them through the Sandstorm APIs. Guides for accessing specific kinds of external resources -- including sending outgoing HTTP requests, sending and receiving e-mail, etc. -- can be found <a href="../">in the full developer documentation</a>.</p>
+<h3 id="reproducible-builds">Reproducible builds</h3>
+<p>The approach described above of copying files directly off your development machine is great for getting up-and-running quickly, but not great for long-term maintenance. As your project gets more serious, you'll want to think about setting up a hermetic build environment that other developers can easily reproduce.</p>
+<p>By editing <code>sandstorm-pkgdef.capnp</code>, you can tell Sandstorm not to look for files on your actual host system, but rather look in some other directory that you set up yourself. So, you could create a clean "chroot" environment inside a separate directory, then tell Sandstorm to look for files there. The details of how to set up chroot environments are beyond the scope of this document, but are already widely-understood and not specific to Sandstorm. <a href="https://www.google.com/search?q=creating+a+chroot+environment">Try Googling it.</a></p>
+<h3 id="testing-updates">Testing updates</h3>
+<p>When you later make changes to your app, you can test it against existing data created with an older version. Whenever you run <code>spk dev</code>, the development version of the app will temporarily override any installed version, even when opening preexisting files.</p>
+<h3 id="keyrings">Keyrings</h3>
+<p>Your app package is cryptographically signed (using Ed25519, if you care). The public key acts as the application's global ID. All packages signed with the same key represent different releases of the same app.</p>
+<p>When you ran <code>spk init</code>, Sandstorm created a new keypair for you. You can see your app's ID in <code>sandstorm-pkgdef.capnp</code>. The corresponding private key was placed on your Sandstorm keyring, which by default is stored at <code>$HOME/.sandstorm-keyring</code>. You need to keep this file safe! If you lose it, you won't be able to build updates of your app, and if someone steals it, they'll be able to publish updates for your app.</p>
+<p>When running in dev mode (<code>spk dev</code>), the keyring is not actually needed. Since you're publishing on a local server over which you have complete control anyway, the server just trusts the ID you give it. This means that you need not distribute your private key to every developer working on your app. Only the person building releases needs to have the key.</p>
+<p>Keyrings can be merged by concatenating them (with plain old <code>cat</code>). To pull specific keys out of your keyring to send to people, use the <code>spk getkey</code> command (type <code>spk help getkey</code> for usage information).</p>
+<p>Currently, keyrings are not encrypted, which means they are vulnerable to any software running under your user account. This is probably bad and will be improved eventually, though in general if you have malware running as yourself then you're pretty screwed already.</p>
+<h3 id="package-ids">Package IDs</h3>
+<p>You can get your data-package-id by running the following command:</p>
+<pre><code>sha256sum package.spk | head -c 32; echo
+</code></pre>
+<p>This is no longer particularly important info now that the app market has launched, and this is handled automatically.</p>
+<h3 id="what-makes-a-good-sandstorm-app">What makes a good Sandstorm app?</h3>
+<p>Not every web app makes sense as a Sandstorm app. Sandstorm is specifically intended for apps that store data which is logically owned by users. Each instance of an app is owned by an individual end user -- <em>not</em> the app's developer. The user may share their instance with other users and collaborate, but ultimately each instance belongs to an individual.</p>
+<p>Things that make sense as Sandstorm apps:</p>
+<ul>
+<li>Document editors, spreadsheets, and similar content creation.</li>
+<li>E-mail/chat/communications.</li>
+<li>Calendars, to-do lists, personal task management.</li>
+<li>RSS readers.</li>
+<li>Personal file/media storage.</li>
+<li>Blogging apps (including microblogging).</li>
+<li>Personal profiles.</li>
+<li>Federated social networks.</li>
+</ul>
+<p>Things that do not make sense as Sandstorm apps:</p>
+<ul>
+<li>Public search engines.</li>
+<li>News portals.</li>
+<li>Large discussion forums (although a federated forum where each user owns the threads they created could make sense).</li>
+<li>Content distribution services.</li>
+<li>Storefronts.</li>
+<li>Centralized social networks.</li>
+</ul>
+<p>Users can create multiple instances of any app they install. Each instance is, by default, isolated from the others, and can be independently shared. Apps should strive to implement instances with a level of granularity that makes sharing make sense. For example, a document editor app should host every document in a separate instance, so that users can use the Sandstorm platform's sharing features to share access to their documents.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../raw-python/" class="btn btn-neutral float-right" title="Raw integration of Python"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../troubleshooting/" class="btn btn-neutral" title="Troubleshooting"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../troubleshooting/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../raw-python/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

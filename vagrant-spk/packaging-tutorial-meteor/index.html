@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Packaging tutorial (Meteor) - Sandstorm</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Packaging tutorial (Meteor)";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../analytics.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Sandstorm</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Using</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../guided-tour/">Guided tour</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/top-bar/">Top bar</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/how-it-works/">How it works</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/security-practices/">Security practices</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developing apps</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Overview of vagrant-spk</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../installation/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../packaging-tutorial/">Packaging tutorial</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Packaging tutorial (Meteor)</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#packaging-tutorial-meteor">Packaging tutorial (Meteor)</a></li>
+                
+                    <li><a class="toctree-l4" href="#introduction">Introduction</a></li>
+                
+                    <li><a class="toctree-l4" href="#overview-of-sandstorm-packages">Overview of Sandstorm packages</a></li>
+                
+                    <li><a class="toctree-l4" href="#prepare-the-app">Prepare the app</a></li>
+                
+                    <li><a class="toctree-l4" href="#set-up-for-sandstorm-development">Set up for Sandstorm development</a></li>
+                
+                    <li><a class="toctree-l4" href="#start-a-virtual-machine-ready-to-run-sandstorm-and-meteor">Start a virtual machine ready to run Sandstorm and Meteor</a></li>
+                
+                    <li><a class="toctree-l4" href="#connect-your-app-to-your-local-sandstorm-server">Connect your app to your local Sandstorm server</a></li>
+                
+                    <li><a class="toctree-l4" href="#launch-your-app-with-one-click">Launch your app with one click</a></li>
+                
+                    <li><a class="toctree-l4" href="#configure-your-apps-name-other-metadata">Configure your app's name &amp; other metadata</a></li>
+                
+                    <li><a class="toctree-l4" href="#create-an-spk-package-file">Create an SPK package file</a></li>
+                
+                    <li><a class="toctree-l4" href="#clean-up">Clean up</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#next-steps">Next steps</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/publishing-apps/">App publishing guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/handbook/">App Developer Handbook</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/auth/">User authentication & permissions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/path/">Paths and URLs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../customizing/">Understanding & customizing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../platform-stacks/">Platform stacks</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../code-dependencies/">Code dependencies</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../services/">Service dependencies</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/web-publishing/">Web publishing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/http-apis/">Exporting HTTP APIs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/email-from-apps/">Email from apps</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../design/">vagrant-spk design document</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developing on raw Sandstorm</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/raw-packaging-guide/">Raw packaging guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/raw-python/">Raw integration of Python</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/raw-ruby-on-rails/">Raw integration of Ruby on Rails</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/raw-pure-client-apps/">Raw integration of pure client apps</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Administering</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../install/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/sandcats/">Sandcats dynamic DNS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/email/">Email</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/demo/">Demo mode</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/backups/">Backups</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/wildcard/">Wildcard hosts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/reverse-proxy/">Reverse Proxy</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/ssl/">HTTPS & SSL</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/faq/">Frequently asked questions</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Sandstorm</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Developing apps &raquo;</li>
+        
+      
+    
+    <li>Packaging tutorial (Meteor)</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/sandstorm-io/sandstorm/tree/master/docs" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="packaging-tutorial-meteor">Packaging tutorial (Meteor)</h1>
+<h2 id="introduction">Introduction</h2>
+<p>This tutorial will show you how to make a
+<a href="https://sandstorm.io">Sandstorm.io</a> package from a Meteor app.</p>
+<p>Creating the package will take about five minutes of focused time,
+interspersed with the downloading of various components, which can
+take up to half an hour.</p>
+<p>Look through the "Next steps" to learn more about how Sandstorm works
+and how to integrate Sandstorm with the Meteor accounts system.</p>
+<p>This tutorial assumes:</p>
+<ul>
+<li>
+<p>You know the basics of Meteor and know how to open a terminal.</p>
+</li>
+<li>
+<p>You have a computer running Mac OS or Linux or Windows.</p>
+</li>
+</ul>
+<p><strong>Windows users, please note</strong>: This tutorial should work for you, but
+you might need to use slightly different commands to do things like
+create directories. Contact community@sandstorm.io if you need help.</p>
+<h2 id="overview-of-sandstorm-packages">Overview of Sandstorm packages</h2>
+<p>The tutorial uses a Meteor app as an example. <strong>Sandstorm supports any
+programming language that runs on Linux</strong>, not just Meteor, such as
+Python, Rails, Node, PHP, C++, Go, Rust, and more. Read about
+<a href="../platform-stacks/">vagrant-spk's platform stacks</a> to see how to
+optimize your package for your app's programming language.</p>
+<p>Once you've worked through this tutorial, look in the <strong>Next steps</strong> section
+at the bottom of this document to learn more about how to improve the speed
+of packaging on your computer, learn about user authentication and
+permissions in Sandstorm, and more.</p>
+<p>A Sandstorm application package ("SPK file" for short) includes all
+the code needed to run your app, including all binaries, libraries,
+modules, etc. Sandstorm relies on Meteor's <code>meteor build</code> system to
+create the package.</p>
+<p>Making a Sandstorm package enables people to:</p>
+<ul>
+<li>
+<p>Create an instance of the app ("grain") with one click.</p>
+</li>
+<li>
+<p>Create a private grain of the app, secured by Sandstorm.</p>
+</li>
+<li>
+<p>Invite others to the grain through a Google Docs-like sharing
+  interface.</p>
+</li>
+<li>
+<p>Trust that the data they enter into the app stays private to the
+  app, due to Sandstorm's sandboxing.</p>
+</li>
+</ul>
+<p>Sandstorm packages rely on the Sandstorm platform to handle user login
+and access control. You can read more in the <a href="../../developing/handbook/">App Developer
+Handbook</a>. You can use an Atmosphere
+package called
+<a href="https://github.com/sandstorm-io/meteor-accounts-sandstorm">kenton:accounts-sandstorm</a>
+to integrate with that.</p>
+<h2 id="prepare-the-app">Prepare the app</h2>
+<p>In this tutorial, we make a package for a web-based clock that is made
+with Meteor. To create it, run the following commands:</p>
+<pre><code class="bash">mkdir -p ~/projects/sandstorm-packaging-tutorial
+cd ~/projects/sandstorm-packaging-tutorial
+meteor create --example clock
+</code></pre>
+
+<p>You now have a fully functional Meteor app stored in
+<code>~/projects/sandstorm-packaging-tutorial/clock</code>.</p>
+<p><strong>Note</strong>: This is a regular Meteor app, so you can play with it
+by running <code>meteor</code> and you can import it into git if you like.</p>
+<h2 id="set-up-for-sandstorm-development">Set up for Sandstorm development</h2>
+<p>In this step, you will install the main Sandstorm app development
+tool, a command-line tool called <code>vagrant-spk</code>.</p>
+<p>That tool automates the process of creating a Linux virtual machine,
+installing Sandstorm in the virtual machine, running your app in
+Sandstorm, capturing its dependencies, and creating a package file you
+can distribute so anyone with Sandstorm can see what you saw.</p>
+<p><strong>Get your computer ready.</strong> Follow the <a href="../installation/">vagrant-spk installation
+guide</a> before proceeding.</p>
+<p>Once installed, you can use the <code>vagrant-spk</code> command to create a
+Linux virtual machine. Make sure it's installed by running:</p>
+<pre><code class="bash">vagrant-spk --help
+</code></pre>
+
+<p>You should see a message like:</p>
+<pre><code class="bash">usage: /usr/local/bin/vagrant-spk [-h] [--work-directory WORK_DIRECTORY]
+                                  {setupvm,up,init,dev,pack,publish,halt,destroy,global-status,ssh}
+                                  [command_specific_args [command_specific_args ...]]
+...
+</code></pre>
+
+<p>You need to install <code>vagrant-spk</code> just once, and you can use it to
+create any number of Sandstorm packages.</p>
+<h2 id="start-a-virtual-machine-ready-to-run-sandstorm-and-meteor">Start a virtual machine ready to run Sandstorm and Meteor</h2>
+<p>Sandstorm packages contain the full set of executable code required to
+run an app on a Linux machine. <code>vagrant-spk</code> can prepare an isolated
+environment with your app and its Meteor dependencies in order to
+bundle them together into a Sandstorm package. The virtual machine it
+creates runs Linux, which allows you to create packages that run on
+Linux-based Sandstorm servers no matter what your main operating
+system is.</p>
+<p>To define a new machine to run your app inside, run this command:</p>
+<pre><code class="bash">cd ~/projects/sandstorm-packaging-tutorial/clock
+vagrant-spk setupvm meteor
+</code></pre>
+
+<p>You should see a message like the following:</p>
+<pre><code class="bash">Initializing .sandstorm directory in /Users/myself/projects/sandstorm-packaging-tutorial/clock/.sandstorm
+</code></pre>
+
+<p><code>vagrant-spk</code> stores packaging information in a <code>.sandstorm/</code>
+directory within your app. The directory contains executable scripts
+that define how the app is packaged as well as metadata like the
+authors' names, the app's name, and icons for the app. We encourage
+you to store this directory with the source code of your app; that
+way, your colleagues can submit changes to the Sandstorm packaging.</p>
+<p>Now switch the virtual machine on. This <strong>will take a while</strong>, perhaps
+2-20 minutes the first time it boots, depending on your Internet
+connection.</p>
+<pre><code class="bash">cd ~/projects/sandstorm-packaging-tutorial/clock
+vagrant-spk up
+</code></pre>
+
+<p>You will see a <em>lot</em> of messages printed out. Some of them are not
+necessary; we're working on tidying up the scripts to minimize the
+noise.</p>
+<p>Eventually, you will get your shell back. At this point, you can
+continue to the next step.</p>
+<p><strong>Troubleshooting note</strong>: If the <code>vagrant-spk up</code> command fails, it
+could be because you already have Sandstorm installed on your
+laptop. You can recognize this error via the following red text:</p>
+<pre><code class="bash">Vagrant cannot forward the specified ports on this VM, since they
+would collide with some other application that is already listening
+on these ports. The forwarded port to 6080 is already in use
+on the host machine.
+</code></pre>
+
+<p>If you see that, run:</p>
+<pre><code class="bash">sudo service sandstorm stop
+</code></pre>
+
+<p>and halt any other <code>vagrant-spk</code> virtual machines you might be using
+to develop other apps.</p>
+<h2 id="connect-your-app-to-your-local-sandstorm-server">Connect your app to your local Sandstorm server</h2>
+<p>Apps run differently in Sandstorm, compared to <code>meteor deploy</code>, so
+it's essential to preview what your app would look like when running
+in Sandstorm. <code>vagrant-spk</code> helps you do this by providing a Sandstorm
+server within a Linux virtual machine.</p>
+<p>Before we can see the app in Sandstorm, it needs to have a package
+definition file specifying the app's title and other metadata. Create
+it with this command:</p>
+<pre><code class="bash">cd ~/projects/sandstorm-packaging-tutorial/clock
+vagrant-spk init
+</code></pre>
+
+<!-- Editor's note: In the future, we can blend `init` into `dev`. -->
+
+<p>This will create a <code>.sandstorm/sandstorm-pkdef.capnp</code> file, containing
+some defaults.</p>
+<p>Now make the app available to the Sandstorm server by running:</p>
+<pre><code class="bash">cd ~/projects/sandstorm-packaging-tutorial/clock
+vagrant-spk dev
+</code></pre>
+
+<p>This step <strong>can take some time</strong> to download the Meteor dependencies
+of the app.  Once it is done, you will see a message like:</p>
+<pre><code class="bash">App is now available from Sandstorm server. Ctrl+C to disconnect.
+</code></pre>
+
+<p>When we visit the Sandstorm server, we'll see the app available. Open up
+this URL in your web browser:
+<a href="http://local.sandstorm.io:6080/">http://local.sandstorm.io:6080/</a></p>
+<p>A note about <code>local.sandstorm.io</code>: This is the same as <code>localhost</code>,
+but in Sandstorm's security model, each session to the app uses a
+temporary subdomain of the main Sandstorm URL. This is an
+implemenation detail that your app mostly does not need to know about,
+but it does mean that the domain name running Sandstorm needs
+<a href="../../administering/wildcard/">wildcard DNS</a>. We created
+<code>local.sandstorm.io</code> as an alias for <code>localhost</code> and gave it wildcard
+DNS. You can rest assured that your interactions with
+<code>local.sandstorm.io</code> stay entirely on your computer.</p>
+<!--(**Editor's note**: We should make localhost:6080 work, so that people don't have to learn about `local.sandstorm.io`.)-->
+
+<p>Take a moment now to sign in. Choose <strong>with a Dev account</strong> and choose
+<strong>Alice (admin)</strong>. You will have to enter an email address; you can use
+<strong>alice@example.com</strong>.</p>
+<p>You should see an app in the apps list called <strong>Example App</strong>.</p>
+<h2 id="launch-your-app-with-one-click">Launch your app with one click</h2>
+<p>Sandstorm is a platform where users without technical knowledge can
+launch instances of web apps, called "grains." To launch an instance
+of the clock, click on the icon above <strong>Example App</strong>.</p>
+<p>You'll now see a clock! It has the name <strong>Untitled Instance</strong>.</p>
+<p>Sandstorm makes it easy to run multiple instances of an app; each one
+is called a <em>grain</em>. Anyone with your app available on their Sandstorm
+instance can create a new grain by clicking its icon.</p>
+<p>You can test this out by going back to the <strong>New</strong> menu and creating
+one or two more grains of the app right now. The <strong>Open</strong> menu enables
+you to switch between different grains.</p>
+<p>Sandstorm apps often need fewer lines of code than regular web
+apps. They need to contain the web interface for creating exactly one
+document, or editing just one image, or publishing one single
+blog. Document management is delegated to Sandstorm.</p>
+<p>Each grain runs totally isolated from other grains. For Meteor apps,
+each grain has its own MongoDB server and database. Embedding the
+database server into the package helps enforce isolation between app
+instances: a crash or security issue in one grain doesn't affect
+another grain. This also simplifies app packaging; it's OK to use use
+the same database name for every grain.</p>
+<p><strong>A word about Meteor, Sandstorm, and hot code push</strong>: Each call to
+<code>vagrant-spk dev</code> runs <code>meteor build</code>, which disables hot code push in
+Meteor. To update the code you see in Sandstorm, you will need to stop
+and start the <code>vagrant-spk dev</code> process. This is due to a technical
+limitation in Sandstorm that we are working on addressing.</p>
+<h2 id="configure-your-apps-name-other-metadata">Configure your app's name &amp; other metadata</h2>
+<p><strong>Example App</strong> is not a very descriptive name for this app, and <strong>New
+instance</strong> is not a very descriptive name for a grain of this app. We
+can do better.</p>
+<p>This information is stored in
+<code>.sandstorm/sandstorm-pkgdef.capnp</code>. <code>capnp</code> is the file extension for
+<a href="https://capnproto.org/">Cap'n Proto</a>. For the purpose of this
+tutorial, Cap'n Proto is a configuration file format that is easy for
+Sandstorm to parse.</p>
+<p>To change the title, open <code>.sandstorm/sandstorm-pkgdef.capnp</code> in a
+text editor. Find the line with this text:</p>
+<pre><code class="bash">    appTitle = (defaultText = &quot;Example App&quot;),
+</code></pre>
+
+<p>Change it to the following.</p>
+<pre><code class="bash">    appTitle = (defaultText = &quot;Analog Clock&quot;),
+</code></pre>
+
+<p>We can change the text that Sandstorm users see when they want to
+create a new <em>instance</em> of the app. To do this, find the line
+containing:</p>
+<pre><code class="bash">      ( title = (defaultText = &quot;New Instance&quot;),
+</code></pre>
+
+<p>and change it to read:</p>
+<pre><code class="bash">      ( title = (defaultText = &quot;New Clock&quot;),
+</code></pre>
+
+<p>To refresh the information that shows up in
+<a href="http://local.sandstorm.io:6080/">http://local.sandstorm.io:6080/</a>,
+find the terminal where you are running <code>vagrant-spk dev</code>. It should
+have this line at the end.</p>
+<pre><code>App is now available from Sandstorm server. Ctrl+C to disconnect.
+</code></pre>
+
+<p>Hold the <code>Ctrl</code> key and tap <code>c</code> on your keyboard to get your
+terminal back. Then re-start the process by running these
+commands.</p>
+<pre><code class="bash">cd ~/projects/sandstorm-packaging-tutorial/clock
+vagrant-spk dev
+</code></pre>
+
+<p>This <strong>may take a minute</strong> while Meteor verifies it has downloaded all
+your dependencies.</p>
+<p>Now visit the the <strong>New</strong> menu. You should see that the app has a new
+name -- <strong>Analog Clock</strong> -- and it allows you to make a <strong>New clock</strong>.</p>
+<h2 id="create-an-spk-package-file">Create an SPK package file</h2>
+<p>The artifact that Sandstorm app authors deliver to users is a
+Sandstorm package (SPK) file, containing the app and all its
+dependencies. The typical way to distribute this is via the <a href="https://apps.sandstorm.io">Sandstorm
+app market</a>.</p>
+<p>We'll build an SPK now. To do that, we must first stop the dev
+server. To do that, open the terminal window containing the
+<code>vagrant-spk dev</code> process and type <code>Ctrl-C</code> on your keyboard. You will
+see some messages like:</p>
+<pre><code class="bash">Unmounted cleanly.
+Updating file list.
+</code></pre>
+
+<p>Sandstorm stays running, and the app is now disconnected. If you're
+still logged into your Sandstorm instance, you will notice the app
+vanishing from the list of apps and your grains will become
+broken. After we upload a Sandstorm package of the app, the grains
+will heal themselves.</p>
+<p>To create the SPK file, run:</p>
+<pre><code class="bash">cd ~/projects/sandstorm-packaging-tutorial/clock
+vagrant-spk pack ~/projects/package.spk
+</code></pre>
+
+<p>This will take a few moments, and once it is done, there will be a
+file in <code>~/projects/package.spk</code> that contains the full app.</p>
+<p>You can see how large it is by running the following command:</p>
+<pre><code class="bash">du -h ~/projects/package.spk
+</code></pre>
+
+<p>In my case, I see:</p>
+<pre><code class="bash">21M     ~/projects/package.spk
+</code></pre>
+
+<p>This file size includes everything the app needs to run: its database
+server, its libraries, and the Meteor app itself.</p>
+<p>We can upload this app to our development Sandstorm server by visiting
+the <strong>New</strong> tab and clicking <strong>Upload app - choose SPK file</strong>, and
+then choosing this file in your web browser's upload dialog.</p>
+<p>To learn how to go further and share this SPK file, or what you should know
+for other web frameworks, check out the <strong>What's next</strong> section below.</p>
+<!--(**Editor's note**: IMHO vagrant-spk pack should auto-guess a reasonable package filename.)-->
+
+<h2 id="clean-up">Clean up</h2>
+<p>With <code>vagrant-spk</code>, before you can develop a second app, you must stop
+the virtual machine created as part of developing the first one.  This
+is because the <code>vagrant-spk</code> virtual machine always uses port 6080.</p>
+<p>In our case, we're done using the virtual machine running this app, so
+it's safe to stop it. Run this command:</p>
+<pre><code class="bash">cd ~/projects/sandstorm-packaging-tutorial/clock
+vagrant-spk halt
+</code></pre>
+
+<p>This shuts down the whole virtual machine used for developing your
+app's Sandstorm package, including the Sandstorm install specific to
+that app's packaging work. Now port 6080 is available for other app
+packaging projects.</p>
+<p>If you ever want to work on this app's packaging again, you can bring
+it online by running:</p>
+<pre><code class="bash">cd ~/projects/sandstorm-packaging-tutorial/clock
+vagrant-spk up
+</code></pre>
+
+<p>If you ever are confused about which Vagrant virtual machines are
+running, run this command:</p>
+<pre><code class="bash">vagrant global-status
+</code></pre>
+
+<p>(<strong>Note</strong>: It's <code>vagrant</code> here, not <code>vagrant-spk</code>.)</p>
+<h1 id="next-steps">Next steps</h1>
+<p>Now that you've seen the basics of how a Sandstorm app works, you
+might be interested in any of the following:</p>
+<!-- * How do I support users & access control? TODO FIXME Write something about this. -->
+
+<ul>
+<li>What makes a great Sandstorm app? See the <a href="../../developing/handbook/">App Developer Handbook</a>.</li>
+<li>How do I learn more about the technical underpinnings of <code>vagrant-spk</code>? How do I make <code>vagrant-spk</code> faster?
+Read about <a href="../customizing/">understanding &amp; customizing vagrant-spk</a>.</li>
+<li>How do I package-up a Python, PHP, or other non-Meteor app? Read about <a href="../platform-stacks/">platform stacks</a>.</li>
+<li>Will this work on Windows? Yes, probably, but I use <code>~</code> and <code>mkdir -p</code> above, and you can't typically use those on Windows.</li>
+<li>Will this work on a cloud Linux instance? Probably not, since <code>vagrant-spk</code> creates a virtual machine and running a VM inside a VM often fails.</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../developing/publishing-apps/" class="btn btn-neutral float-right" title="App publishing guide"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../packaging-tutorial/" class="btn btn-neutral" title="Packaging tutorial"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../packaging-tutorial/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../developing/publishing-apps/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

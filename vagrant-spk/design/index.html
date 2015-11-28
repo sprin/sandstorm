@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>vagrant-spk design document - Sandstorm</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "vagrant-spk design document";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../analytics.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Sandstorm</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Using</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../guided-tour/">Guided tour</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/top-bar/">Top bar</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/how-it-works/">How it works</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/security-practices/">Security practices</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developing apps</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Overview of vagrant-spk</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../installation/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../packaging-tutorial/">Packaging tutorial</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../packaging-tutorial-meteor/">Packaging tutorial (Meteor)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/publishing-apps/">App publishing guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/handbook/">App Developer Handbook</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/auth/">User authentication & permissions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/path/">Paths and URLs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../customizing/">Understanding & customizing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../platform-stacks/">Platform stacks</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../code-dependencies/">Code dependencies</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../services/">Service dependencies</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/web-publishing/">Web publishing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/http-apis/">Exporting HTTP APIs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/email-from-apps/">Email from apps</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">vagrant-spk design document</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#vagrant-spk-design-document">vagrant-spk design document</a></li>
+                
+                    <li><a class="toctree-l4" href="#about-vagrant-spk">About vagrant-spk</a></li>
+                
+                    <li><a class="toctree-l4" href="#installation-plans">Installation plans</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#create-packaging-template-files-with-vagrant-spk-init">Create packaging template files, with vagrant-spk init</a></li>
+                
+                    <li><a class="toctree-l4" href="#distribute-the-spk-file">Distribute the SPK file!</a></li>
+                
+                    <li><a class="toctree-l4" href="#add-these-files-to-version-control">Add these files to version control</a></li>
+                
+                    <li><a class="toctree-l4" href="#back-up-your-key">Back up your key</a></li>
+                
+                    <li><a class="toctree-l4" href="#known-ways-to-improve-this">Known ways to improve this</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developing on raw Sandstorm</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/raw-packaging-guide/">Raw packaging guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/raw-python/">Raw integration of Python</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/raw-ruby-on-rails/">Raw integration of Ruby on Rails</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../developing/raw-pure-client-apps/">Raw integration of pure client apps</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Administering</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../install/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/sandcats/">Sandcats dynamic DNS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/email/">Email</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/demo/">Demo mode</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/backups/">Backups</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/wildcard/">Wildcard hosts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/reverse-proxy/">Reverse Proxy</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/ssl/">HTTPS & SSL</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/faq/">Frequently asked questions</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Sandstorm</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Developing apps &raquo;</li>
+        
+      
+    
+    <li>vagrant-spk design document</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/sandstorm-io/sandstorm/tree/master/docs" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="vagrant-spk-design-document">vagrant-spk design document</h1>
+<p>This page documents the initial design goals of
+<code>vagrant-spk</code>. Therefore it is a statement of <em>hope</em>, not a statement
+of <em>fact.</em> Given that, please take it with a pinch of salt.</p>
+<p>You can find the current implementation at
+<a href="https://github.com/sandstorm-io/vagrant-spk">sandstorm-io/vagrant-spk</a>.</p>
+<h2 id="about-vagrant-spk">About vagrant-spk</h2>
+<p><code>vagrant-spk</code> is a tool that makes it easy to take a web application
+that runs on Linux and make a Sandstorm package from it. It is called
+<code>vagrant-spk</code> because it relies on Vagrant, a tool that makes it
+(supposedly) easy to create disposable virtual Linux systems.</p>
+<p><code>vagrant-spk</code> emphasizes:</p>
+<ul>
+<li><strong>Clear process</strong>: This documentation should serve as a clear guide for how to package an app for Sandstorm. The purpose of each step should be clear, and it should be easy to debug problems.</li>
+<li><strong>Support for many platforms</strong>: Packaging an app for Sandstorm with <code>vagrant-spk</code> should work properly on Windows, Mac, and Linux.</li>
+<li><strong>Useful defaults, with deviation possible</strong>: If the tooling can choose a default that is likely to work for people, it does so; it also documents how to make a different choice if you have to.</li>
+<li><strong>Re-usability</strong>: The work that you do to package the app should be usable by other people, and it should be useful to you when you need to upgrade the app to its latest version.</li>
+<li><strong>Humility</strong>: <code>vagrant-spk</code> is a convenience tool, but nothing in it a <em>core</em> part of Sandstorm. Therefore, if other people come up with a better tool for creating SPKs, it will be possible for that future tool to take over the ecosystem.</li>
+</ul>
+<p>To package an app for Sandstorm with <code>vagrant-spk</code>, you will need to follow these steps:</p>
+<ul>
+<li>Install <code>vagrant-spk</code>, so that it is on your $PATH.</li>
+<li>Install Vagrant on your system.</li>
+<li>Run <code>vagrant-spk setupvm lemp</code> within the app's main source tree, to create template files that will be used by the packaging process.  'lemp' here refers to a particular software stack (linux/nginx/mysql/php) that should be run in the package; we may add support for other stacks in the future.</li>
+<li>Run <code>vagrant-spk up</code> from the same folder to launch the VM, install a developer-mode Sandstorm instance, and install and configure nginx/php/mysql for the app.</li>
+<li>Run <code>vagrant-spk init</code> to create a <code>sandstorm-pkgdef.capnp</code> file describing the app.  Modify it to correct things like e.g. app name and action text.</li>
+<li>Get your app ready for the Sandstorm sandbox. This will mean ensuring the app runs properly at all.</li>
+<li>Run <code>vagrant-spk dev</code> to verify if the app runs within Sandstorm. If not, loop back to "Get your app ready".</li>
+<li>Run <code>vagrant-spk pack</code> to create an SPK file, containing your app and all its dependencies.</li>
+<li>Distribute your SPK file to yourself (on your own Sandstorm instance) and (optionally) add it to the Sandstorm App List.</li>
+<li>Optional, but recommended: Push the files created by <code>vagrant-spk</code> into version control.</li>
+</ul>
+<p>Right now, <code>vagrant-spk</code> is built primarily with PHP/MySQL apps in
+mind. We hope to enhance it over time to work for a wider variety of
+apps.</p>
+<p>To read how to package a sample PHP/MySQL app for Sandstorm, read the
+<a href="../packaging-tutorial/">five minute packaging tutorial</a>.</p>
+<h2 id="installation-plans">Installation plans</h2>
+<p>How are Windows people going to execute a shell script?</p>
+<p>Then again, should we grow up and make it a Python script (and
+probably limit its dependencies to the Python standard library)? If
+so, then we can use e.g. py2exe and make it a single EXE file that you
+place somewhere that's always on the %PATH%.</p>
+<p>We could write it in Go. Hmm. Or we could write it in C++. Or we could
+write it in JavaScript and for Windows convenience, use JSDB:
+http://jsdb.org/ which allows</p>
+<p>Turns out NSIS offers a way to modify %PATH%, if we need to go down that road:</p>
+<ul>
+<li>http://nsis.sourceforge.net/Path_Manipulation</li>
+<li>https://stackoverflow.com/questions/11272066/nsis-how-to-set-an-environment-variable-in-system-variable</li>
+</ul>
+<h1 id="create-packaging-template-files-with-vagrant-spk-init">Create packaging template files, with vagrant-spk init</h1>
+<pre><code>
+If you see the following instead:
+
+</code></pre>
+
+<p>$ ls index.<em>
+ls: cannot access index.</em>: No such file or directory</p>
+<pre><code>
+You probably need to use `cd` to switch into the directory containing the app you want to package.
+
+## Original proposed result of vagrant-spk init
+
+</code></pre>
+
+<p>$ vagrant-spk init</p>
+<pre><code>
+It will create the following files, which you will customize over the course of this guide.
+
+* `.sandstorm/Vagrantfile` - This file contains information defining a virtual machine.
+* `.sandstorm/provision.sh` - This file contains commands to run when creating the virtual machine. You'll customize it below if needed.
+* `.sandstorm/sandstorm-pkgdef.capnp` - This file contains information about the package, such as its name.
+* `.sandstorm/sandstorm-files.list` - This is a list of all the files from the operating system that will become part of the SPK.
+
+If you have a `.gitignore` file, it will add these lines to it:
+
+</code></pre>
+
+<p>.sandstorm/on-instance-start-initial-var/
+.sandstorm/tmp/
+.sandstorm/build-result/</p>
+<pre><code>
+Feel free to add all these changes into git, if you like, and commit.
+
+## Start a virtual machine to run your app
+
+### Click around to do setup tasks
+
+Some PHP/MySQL apps require manual interaction with their web interface to set up a config file and sample data. Now is a good time to do those tasks.
+
+## Get your app ready for the Sandstorm sandbox
+
+### Overview
+
+When a user of an app starts an instance in Sandstorm, Sandstorm does the following:
+
+* Unpack the contents of the SPK into a new directory.
+* Start a fresh container with the SPK content mapped in _read-only_.
+* Create an empty directory at `/var` specific to this one instance.
+* _Prepare the instance_ by running all the scripts, if any, in the `.sandstorm/on-instance-create.d/` directory. By default, this also includes copying the contents of `.sandstorm/on-instance-start-initial-var/` into `/var`.
+* _Run the app_ by running all the scripts in the `.sandstorm/on-instance-start.d/` directory.
+* _Provide HTTP headers_ indicating user identity and access level to the app. (See the separate doc on [User Authentication](User-Authentication) on the topic.)
+
+(If you are curious, some of this infrastructure is built-in to Sandstorm, and some is provided by `vagrant-spk`; see also `.sandstorm/sandstorm-pkgdev.capnp` to learn more about the boundary.)
+
+Therefore, you will need to create a snapshot of `/var` that is loaded into each app instance. The steps below indicate how to do that.
+
+### Steps
+
+To improve clarity, let's temporarily stop the nginx and mysql services. (The easiest way to get them back is to run `vagrant reload`, which reboots the Linux virtual machine and starts all services that would normally auto-start.)
+
+To do that, run the following from the `.sandstorm` directory:
+
+</code></pre>
+
+<p>$ vagrant ssh
+$ sudo service nginx stop
+$ sudo service mysql stop</p>
+<pre><code>
+To verify that nginx has truly stopped, visit http://localhost:8000/ in your browser now. You will notice that your browser shows you an error page, whereas earlier it showed the app you were packaging.
+
+If your app needs data in `/var` to run properly -- for example, if it needs a MySQL or sqlite database that you have already created -- you can copy that into the `.sandstorm/on-instance-start-initial-var/` directory with the following commands:
+
+</code></pre>
+
+<p>$ rsync -av /var/. /opt/app/.sandstorm/on-instace-start-initial-var/</p>
+<pre><code>
+That should be all you need to do within while logged into the virtual machine. So you can run this command to go back to leave the `vagrant ssh` session.
+
+</code></pre>
+
+<p>$ exit</p>
+<pre><code>
+Make sure you are in the `.sandstorm/` directory, then run:
+
+</code></pre>
+
+<p>$ vagrant-spk dev</p>
+<pre><code>
+This will do the following:
+
+* Start Sandstorm within the Vagrant box, and
+* Make your app available to it.
+
+So now if you visit http://local.sandstorm.io:6080/ , you should see the ability to start an instance of your app.
+
+Does it work properly? Great! Try a second instance!
+
+At this point, you might notice that the button to start an instance of your app is labeled &quot;New Sample App&quot;. You probably want to change the name from &quot;New Sample App&quot; to something better by editing `.sandstorm/sandstorm-pkgdev.capnp`.
+
+Note that it's _essential_ that you try out the app during this phase. Sandstorm emphasizes small SPK files, and we achieve this by tracing the app when `spk dev` is running, storing a list of files the app truly access. You can feel comfortable knowing that none of your personal files are available within the Vagrant virtual machine, so none of your personal files will be embedded in the SPK file.
+
+Now, quit `vagrant-spk dev` by typing `Ctrl-C` on your keyboard. The tooling will generate a `.sandstorm/sandstorm-files.list` that you can inspect.
+
+## Create the SPK file, with vagrant-spk pack
+
+Finally, you can pack all the files of your app and the operating system components that it used by running this command:
+
+</code></pre>
+
+<p>$ vagrant-spk pack</p>
+<pre><code>
+This creates a file called:
+
+</code></pre>
+
+<p>.sandstorm/build-result/package.spk
+```</p>
+<p>You can add this to your own Sandstorm server, or upload it to your web hosting and ask us to add it to the Sandstorm App List.</p>
+<h2 id="distribute-the-spk-file">Distribute the SPK file!</h2>
+<p>Distribute your SPK file to yourself (on your own Sandstorm instance) and (optionally) add it to the Sandstorm App List.</p>
+<h2 id="add-these-files-to-version-control">Add these files to version control</h2>
+<p>Optional, but recommended: Push the files created by vagrant-spk into version control.</p>
+<h2 id="back-up-your-key">Back up your key</h2>
+<p>Always a good idea.</p>
+<h2 id="known-ways-to-improve-this">Known ways to improve this</h2>
+<ul>
+<li>Document how to handle the MySQL content specifically, and what MySQL username/password the app should use. The general plan is:</li>
+<li>Pre-install MySQL, and have a hard-coded username &amp; password that apps should use, and</li>
+<li>Tell people to rsync the MySQL data into the var snapshot directory, so that there is a clear moment where they do that snapshotting (and therefore they know how to modify it).</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../developing/troubleshooting/" class="btn btn-neutral float-right" title="Troubleshooting"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../developing/email-from-apps/" class="btn btn-neutral" title="Email from apps"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../../developing/email-from-apps/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../developing/troubleshooting/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

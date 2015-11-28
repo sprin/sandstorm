@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>User authentication & permissions - Sandstorm</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "User authentication & permissions";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../analytics.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Sandstorm</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Using</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../guided-tour/">Guided tour</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/top-bar/">Top bar</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/how-it-works/">How it works</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/security-practices/">Security practices</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developing apps</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/">Overview of vagrant-spk</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/installation/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/packaging-tutorial/">Packaging tutorial</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/packaging-tutorial-meteor/">Packaging tutorial (Meteor)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../publishing-apps/">App publishing guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../handbook/">App Developer Handbook</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">User authentication & permissions</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#about-sandstorm-http-bridge">About sandstorm-http-bridge</a></li>
+                
+                    <li><a class="toctree-l4" href="#headers-that-an-app-receives">Headers that an app receives</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#apps-operating-without-sandstorm-http-bridge">Apps operating without sandstorm-http-bridge</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#further-reading">Further reading</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../path/">Paths and URLs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/customizing/">Understanding & customizing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/platform-stacks/">Platform stacks</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/code-dependencies/">Code dependencies</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/services/">Service dependencies</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../web-publishing/">Web publishing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../http-apis/">Exporting HTTP APIs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../email-from-apps/">Email from apps</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/design/">vagrant-spk design document</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developing on raw Sandstorm</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../raw-packaging-guide/">Raw packaging guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../raw-python/">Raw integration of Python</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../raw-ruby-on-rails/">Raw integration of Ruby on Rails</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../raw-pure-client-apps/">Raw integration of pure client apps</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Administering</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../install/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/sandcats/">Sandcats dynamic DNS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/email/">Email</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/demo/">Demo mode</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/backups/">Backups</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/wildcard/">Wildcard hosts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/reverse-proxy/">Reverse Proxy</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/ssl/">HTTPS & SSL</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/faq/">Frequently asked questions</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Sandstorm</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Developing apps &raquo;</li>
+        
+      
+    
+    <li>User authentication & permissions</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/sandstorm-io/sandstorm/tree/master/docs" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>A Sandstorm app delegates authentication to the Sandstorm
+platform. This page explains how to identify human visitors to an app
+via HTTP(S). For information on authenticating mobile apps, native
+clients, and other automated agents, see <a href="../http-apis/">Exporting HTTP
+APIs</a>.</p>
+<h2 id="about-sandstorm-http-bridge">About sandstorm-http-bridge</h2>
+<p>When a web app runs within Sandstorm, Sandstorm sanitizes all HTTP
+requests. By default, it passes requests to your app via a tool called
+<code>sandstorm-http-bridge</code>. This results in a few interesting properties:</p>
+<ul>
+<li>
+<p>Sandstorm knows <em>which user</em> is making the request, so it can add
+  headers indicating the currently logged-in user's name
+  ("authentication").</p>
+</li>
+<li>
+<p>Sandstorm knows <em>which permissions the user has</em> -- for example, it
+  knows if the user owns this grain -- so it can add headers
+  indicating what permissions the user has ("authorization").</p>
+</li>
+<li>
+<p>When your app receives HTTP requests, <code>sandstorm-http-bridge</code> has
+  normalized them. If a user's browser is speaking some non-compliant
+  dialect of HTTP, your app doesn't have to handle it.</p>
+</li>
+</ul>
+<h3 id="headers-that-an-app-receives">Headers that an app receives</h3>
+<p>Per the
+<a href="https://github.com/sandstorm-io/sandstorm/blob/411b344f3acb151693036f3c061b153a2fd91d68/src/sandstorm/sandstorm-http-bridge.c%2B%2B">current implementation</a>
+of <code>sandstorm-http-bridge</code>, an app receives the following headers
+related to user identity and permissions:</p>
+<ul>
+<li>
+<p><code>X-Sandstorm-Username</code>: This is set to the user's full name, in
+  <a href="http://en.wikipedia.org/wiki/Percent-encoding">percent-encoded</a>
+  UTF-8. For example, the username <code>"Kurt Friedrich Gödel"</code> will
+  appear as <code>"Kurt%20Friedrich%20G%C3%B6del"</code>.  For anonymous users,
+  this header will simply contain "Anonymous%20User".</p>
+</li>
+<li>
+<p><code>X-Sandstorm-User-Id</code>: If the user is logged in, this is set to the
+  user's current user ID, which is the first 128 bits of a
+  SHA-256. For example: <code>0ba26e59c64ec75dedbc11679f267a40</code>.  This
+  header is <strong>not sent at all for anonymous users</strong>.</p>
+</li>
+<li>
+<p><code>X-Sandstorm-Permissions</code>: This contains a list of the permissions
+  held by the current user. Permissions are defined in the package's
+  <code>sandstorm-pkgdef.capnp</code>. The grain's owner holds every permission
+  and can use the "Share" button to authorize other users.</p>
+</li>
+<li>
+<p><code>X-Sandstorm-Preferred-Handle</code>: The user's preferred "handle". A
+  handle is like a Unix username. It contains only lower-case ASCII
+  letters, digits, and underscores, and it never starts with a digit.
+  The user can set their preferred handle in their account settings.
+  This handle is NOT UNIQUE; it is only a hint from the user. Apps
+  that use handles must decide for themselves whether they need
+  unique handles and, if so, implement some mechanism to deal with
+  duplicates (such as prompting the user to choose a different one,
+  or just appending some digits). Apps should strongly consider
+  using display names (<code>X-Sandstorm-Username</code>) instead of handles.
+  <strong>WARNING: A user can change their preferred handle at any time.
+  Two users can have the same preferred handle. The preferred handle
+  is just another form of display name. Do not use preferred handles
+  as primary keys or for security; use <code>X-Sandstorm-User-Id</code>
+  instead.</strong></p>
+</li>
+<li>
+<p><code>X-Sandstorm-User-Picture</code>: The URL of the user's profile picture.
+  The exact resolution of the picture is not specified, but assume
+  it is optimized for a 256x256 or smaller viewport (i.e. the actual
+  size is around 512x512 for high-DPI displays). Although profile
+  pictures are normally square, it is recommended to use CSS <code>max-width</code> and
+  <code>max-height</code> instead of <code>width</code> and <code>height</code> in order to avoid
+  distorting a non-square picture. If this header is missing, the
+  user has no profile picture. In this case, it is recommended that
+  apps use <a href="https://github.com/stewartlord/identicon.js">identicon.js</a>,
+  with the user's ID (from <code>X-Sandstorm-User-Id</code>) as the input, to
+  produce identicons consistent with those that Sandstorm's own UI
+  would produce. Note that you should NOT hash the ID; just pass the
+  hex ID directly to the <code>Identicon</code> constructor as the <code>hash</code>
+  argument.</p>
+</li>
+<li>
+<p><code>X-Sandstorm-User-Pronouns</code>: Indicates by which pronouns the user
+  prefers to be referred. Possible values are <code>neutral</code> (English:
+  "they"), <code>male</code> (English: "he/him"), <code>female</code> (English: "she/her"),
+  and <code>robot</code> (English: "it"). If the header is not present, assume
+  <code>neutral</code>. The purpose of this header is to allow cleaner text in
+  user interfaces.</p>
+</li>
+</ul>
+<h2 id="apps-operating-without-sandstorm-http-bridge">Apps operating without sandstorm-http-bridge</h2>
+<p>It is possible to write a Sandstorm app that does not use
+<code>sandstorm-http-bridge</code>! It can access authentication data by using
+the Cap'n Proto raw Sandstorm API. We provide sample code for that in
+the
+<a href="https://github.com/sandstorm-io/sandstorm-rawapi-example">sandstorm-rawapi-example</a>
+repository on GitHub.</p>
+<h2 id="further-reading">Further reading</h2>
+<p>You might be interested in looking at:</p>
+<ul>
+<li>
+<p>A <a href="https://github.com/kentonv/ssjekyll/blob/fd09dbdbd6644abe63c50060044b71556130c30d/sandstorm-pkgdef.capnp">sandstorm-pkgdef.capnp</a>
+  with no permissions defined.</p>
+</li>
+<li>
+<p>A <a href="https://github.com/jparyani/mediawiki-sandstorm/blob/8c7a7d10b6121cb5e94247f7ea27a46ebf8e84eb/sandstorm-pkgdef.capnp">sandstorm-pkgdef.capnp</a>
+  with one permission defined.</p>
+</li>
+<li>
+<p>The <a href="https://github.com/sandstorm-io/sandstorm/blob/411b344f3acb151693036f3c061b153a2fd91d68/src/sandstorm/sandstorm-http-bridge.c%2B%2B">implementation of
+  sandstorm-http-bridge</a>.</p>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../path/" class="btn btn-neutral float-right" title="Paths and URLs"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../handbook/" class="btn btn-neutral" title="App Developer Handbook"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../handbook/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../path/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

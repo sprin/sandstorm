@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Web publishing - Sandstorm</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Web publishing";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="../../analytics.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Sandstorm</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Using</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../guided-tour/">Guided tour</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/top-bar/">Top bar</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/how-it-works/">How it works</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../using/security-practices/">Security practices</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developing apps</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/">Overview of vagrant-spk</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/installation/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/packaging-tutorial/">Packaging tutorial</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/packaging-tutorial-meteor/">Packaging tutorial (Meteor)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../publishing-apps/">App publishing guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../handbook/">App Developer Handbook</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../auth/">User authentication & permissions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../path/">Paths and URLs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/customizing/">Understanding & customizing</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/platform-stacks/">Platform stacks</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/code-dependencies/">Code dependencies</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/services/">Service dependencies</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Web publishing</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#overview">Overview</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#a-helper-program-you-can-include-to-enable-publishing-request-a-publicid">A helper program you can include, to enable publishing &amp; request a publicId</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#show-dns-instructions-to-the-user">Show DNS instructions to the user</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#using-the-sandstorm-capn-proto-apis-directly">Using the Sandstorm Cap'n Proto APIs directly</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#raw-api-example">Raw API example</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#note-provisional-api">Note: Provisional API</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#why-only-static-content">Why only static content?</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../http-apis/">Exporting HTTP APIs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../email-from-apps/">Email from apps</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../vagrant-spk/design/">vagrant-spk design document</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Developing on raw Sandstorm</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../raw-packaging-guide/">Raw packaging guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../raw-python/">Raw integration of Python</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../raw-ruby-on-rails/">Raw integration of Ruby on Rails</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../raw-pure-client-apps/">Raw integration of pure client apps</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Administering</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../install/">Installation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/sandcats/">Sandcats dynamic DNS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/email/">Email</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/demo/">Demo mode</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/backups/">Backups</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/wildcard/">Wildcard hosts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/reverse-proxy/">Reverse Proxy</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/ssl/">HTTPS & SSL</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../administering/faq/">Frequently asked questions</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Sandstorm</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Developing apps &raquo;</li>
+        
+      
+    
+    <li>Web publishing</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/sandstorm-io/sandstorm/tree/master/docs" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>A Sandstorm app can publish <strong>static web content</strong> to <strong>any domain</strong>
+of the user's choosing. This is useful for content management systems,
+blogging platforms, and other apps. This guide helps app authors use
+that feature of the Sandstorm platform.</p>
+<h2 id="overview">Overview</h2>
+<p>In Sandstorm, an app can publish <strong>static HTML</strong> and other files in a
+way where Sandstorm will serve the content, rather than the app. This
+saves on compute time and limits attack surface.</p>
+<p>You can <strong><a href="https://oasis.sandstorm.io/appdemo/qn94a65er7m7s3zgwrsnv8hhh81dw5mc8zpt75a8su30dqhv9gt0">try it
+now</a></strong>
+with this sample app (<a href="https://github.com/paulproteus/sandstorm-sample-static-publishing/">full source
+available</a>).</p>
+<p><strong>Store static files in <code>/var/www</code></strong>. Each directory within <code>/var/www</code>
+should contain a file called <code>index.html</code>.</p>
+<p>The grain can ask Sandstorm to enable publishing by requesting the
+creation of a unique <code>publicId</code>. Once that's done, the files are
+<strong>available on a special subdomain</strong> of the Sandstorm install. The
+subdomain takes the form <code>publicId.sandstorm.example.com</code>.</p>
+<p>Users can also <strong>make the content available at any domain</strong>. To do
+that, they need to configure <strong>a CNAME record</strong> pointing at the
+Sandstorm install; this is how their domain's DNS will resolve to the
+Sandstorm server. The user also needs <strong>a TXT record</strong>; this is how
+Sandstorm determines what <code>publicId</code> this domain corresponds to.</p>
+<p>This page explains how to generate a <code>publicId</code> and how to instruct a
+user of your app to configure their DNS appropriately. This a
+<strong>provisional API</strong>; see the note below about how we aim to make this
+more usable and more secure.</p>
+<h2 id="a-helper-program-you-can-include-to-enable-publishing-request-a-publicid">A helper program you can include, to enable publishing &amp; request a publicId</h2>
+<p>The simplest way to enable static publishing is to embed a small C++
+program with your app. The <a href="https://github.com/paulproteus/sandstorm-sample-static-publishing/">Sample Static Publishing
+App</a>
+includes that C++ code.</p>
+<p>To include the C++ code in your app, copy <a href="https://github.com/paulproteus/sandstorm-sample-static-publishing/tree/master/sandstorm-integration">these
+files</a>
+into a directory of your app called <code>sandstorm-integration</code>.</p>
+<p>If you are using <code>vagrant-spk</code>, also add the following to the end of your
+<code>.sandstorm/setup.sh</code>:</p>
+<pre><code class="bash">### Download &amp; compile capnproto and the Sandstorm getPublicId helper.
+
+# First, get capnproto from master and install it to
+# /usr/local/bin. This requires a C++ compiler. We opt for clang
+# because that's what Sandstorm is typically compiled with.
+if [ ! -e /usr/local/bin/capnp ] ; then
+    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q clang autoconf pkg-config libtool
+    cd /tmp
+    if [ ! -e capnproto ]; then git clone https://github.com/sandstorm-io/capnproto; fi
+    cd capnproto
+    git checkout master
+    cd c++
+    autoreconf -i
+    ./configure
+    make -j2
+    sudo make install
+fi
+
+# Second, compile the small C++ program within
+# /opt/app/sandstorm-integration.
+if [ ! -e /opt/app/sandstorm-integration/getPublicId ] ; then
+    pushd /opt/app/sandstorm-integration
+    make
+fi
+### All done.
+</code></pre>
+
+<p>Now, run the improved <code>.sandstorm/setup.sh</code> script by doing:</p>
+<pre><code class="bash">cd .sandstorm
+vagrant provision
+cd ..
+</code></pre>
+
+<p>This should result in a
+<code>/opt/app/sandstorm-integration/bin/getPublicId</code> binary showing up in
+your directory tree. When you run it and provide the current
+<code>X-Sandstorm-Session-Id</code> header as a command-line parameter, it will
+output a <code>publicId</code> (and other information, see below).</p>
+<p>If you prefer to use your own build system, you can use the above as
+inspiration. If you prefer to call Sandstorm's RPC directly, keep
+reading.</p>
+<p><strong>Note</strong>: At the time of writing, some vagrant-spk stacks crash if you
+run <code>vagrant provision</code> a second time. We're <a href="https://github.com/sandstorm-io/vagrant-spk/issues/87">working on fixing
+that.</a></p>
+<h2 id="show-dns-instructions-to-the-user">Show DNS instructions to the user</h2>
+<p>You should make sure the user knows how to configure their domain's
+CNAME record (to point at the Sandstorm install) and TXT record (to
+tell Sandstorm which grain the domain points at).</p>
+<p>You can find sample text in the <a href="https://github.com/paulproteus/sandstorm-sample-static-publishing/blob/master/after_publish.php">Sandstorm sample app with static
+publishing</a>. The essentials are:</p>
+<ul>
+<li>
+<p>The user can preview their site at the <code>autoUrl</code> link. The <code>bin/getPublicId</code> program
+  prints that as line #3 (<code>lines[2]</code> in 0-indexed programming languages).</p>
+</li>
+<li>
+<p>The user should set their CNAME value to the host component of the
+  <code>autoUrl</code>, for example <code>publicId.sandstorm.example.com</code>. You can
+  calculate this host component of the URL by parsing the <code>autoUrl</code>.</p>
+</li>
+<li>
+<p>The user should set up a TXT record at <code>sandstorm-www.example.com</code>
+  containing just the <code>publicId</code>. The <code>bin/getPublicId</code> program prints
+  that as line 1 (<code>lines[0]</code> in 0-indexed programming languages).</p>
+</li>
+</ul>
+<h2 id="using-the-sandstorm-capn-proto-apis-directly">Using the Sandstorm Cap'n Proto APIs directly</h2>
+<p>You can access the Sandstorm <code>HackSessionContext</code> capability directly
+if you want more performance or prefer to use the Sandstorm APIs with
+no overhead.</p>
+<p><strong>Start by obtaining a <code>HackSessionContext</code> capability.</strong>
+<a href="https://github.com/sandstorm-io/sandstorm/blob/master/src/sandstorm/hack-session.capnp"><code>HackSessionContext</code></a>
+is a <a href="https://capnproto.org">Cap'n Proto</a> interface. You must obtain
+an instance of this capability. The way to do this depends on whether
+your app uses <code>sandstorm-http-bridge</code> (check your
+<code>sandstorm-pkgdef.capnp</code> to find out).</p>
+<p>If you are using the raw Cap'n Proto API without the HTTP Bridge, then
+the <code>SessionContext</code> capability you receive as a parameter to the
+<code>UiView.newSession()</code> method can be cast to <code>HackSessionContext</code>.  *
+If you are using <code>sandstorm-http-bridge</code>, you must open a Cap'n Proto
+connection to <code>unix:/tmp/sandstorm-api</code>, which will give you a
+<a href="https://github.com/sandstorm-io/sandstorm/blob/master/src/sandstorm/sandstorm-http-bridge.capnp">SandstormHttpBridge</a>
+capability. Call <code>getSessionContext()</code> on that capability, using the
+ID that sandstorm-http-bridge places in the <code>X-Sandstorm-Session-Id</code>
+header, and cast the result to a <code>HackSessionContext</code>.</p>
+<p>Note that <code>HackSessionContext</code> is a temporary API. As described below,
+we intend to replace this with a better API later.</p>
+<p><strong>Then call <code>getPublicId()</code> on the context.</strong> The first time you call
+this, the grain (app instance) is assigned a "public ID", which is a
+random string that uniquely identifies the grain, but which differs
+from the "private ID" which appears in the grain's URL. The public ID
+is not a secret as it grants no authority over the grain, whereas
+anyone who knows the private ID has full control over the grain.</p>
+<p>The method call returns the grain's public ID as well as the hostname
+at which the server is hosted.</p>
+<p>Then, instruct the user on how to set up DNS.</p>
+<p>The user will need to set two DNS records:</p>
+<pre><code>&lt;user-host&gt; IN CNAME `&lt;autoUrl&gt;`
+sandstorm-www.&lt;user-host&gt; IN TXT &lt;public-id&gt;
+</code></pre>
+<p>where:</p>
+<ul>
+<li><code>&lt;user-host&gt;</code> is the hostname at which the user wishes to publish their site.</li>
+<li><code>&lt;autoUrl&gt;</code> is the <code>&lt;public-id&gt;</code> plus the Sandstorm server hostname (as returned by <code>getPublicId()</code>).</li>
+<li><code>&lt;server-host&gt;</code> is the hostname of the Sandstorm server (as returned by <code>getPublicId()</code>).</li>
+</ul>
+<h2 id="raw-api-example">Raw API example</h2>
+<p>See the Hacker CMS app, which can be installed from the <a href="https://sandstorm.io/apps">app
+list</a> or from <a href="https://github.com/kentonv/ssjekyll">source
+code</a>.</p>
+<h2 id="note-provisional-api">Note: Provisional API</h2>
+<p>The current Cap'n Proto RPC for web publishing is hacky and not
+intended to be the long-term solution. In the long term, users will be
+able to connect domains to their Sandstorm account and then grant them
+to apps as capabilities through the Powerbox UI. Since the Powerbox
+and persistent capabilities are not yet implemented -- much less the
+ability to connect domains -- we are providing a hack so that
+developers can get started on such apps now. The hack allows a user to
+designate a Sandstorm app to host their domain via a special TXT
+record.</p>
+<p>Also, the use of a C++ binary that you must embed might not be the
+most convenient way to expose the Cap'n Proto API. We're considering
+creating a pure-frontend Javascript API like <a href="../http-apis/">offer
+templates</a> or a <code>postMessage</code>-based API, and/or a
+backend API that is part of <code>sandstorm-http-bridge</code>. Let us know if
+you have a preference for what you would like to use.</p>
+<h2 id="why-only-static-content">Why only static content?</h2>
+<p>In order to make per-user application instances cost-effective, a
+Sandstorm application server normally only runs while a user has the
+application open. This works very well for things like private
+documents which have only one or maybe a few users. A public web site,
+however, is intended to be viewed widely and at all hours of the
+day. If we had to spin up the application sever for every visit, we'd
+lose this key advantage.</p>
+<p>By restricting web publishing to static content, we can avoid spinning
+up the application server for regular visits. Only editing the content
+requires the server to be active.</p>
+<p>As of this writing, there is no way to publish dynamic web sites to a
+custom domain via Sandstorm. In the future, this will become possible
+via the use of APIs. Once an application can export a public API, then
+it will be possible for "static" javascript published on a domain to
+make calls to that API. Such calls will, of course, require spinning
+up the server to handle, but a well-written app may be able to avoid
+making API calls except under special circumstances (e.g. when a user
+clicks to post a comment).</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../http-apis/" class="btn btn-neutral float-right" title="Exporting HTTP APIs"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../vagrant-spk/services/" class="btn btn-neutral" title="Service dependencies"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../../vagrant-spk/services/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../http-apis/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
